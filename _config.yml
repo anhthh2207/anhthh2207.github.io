@@ -58,6 +58,10 @@ collections:
     output: true
     permalink: /projects/:name
 
+  CV:
+    output: true
+    permalink: /CV/:name
+
 
 ### Disqus ###
 disqus:
@@ -88,11 +92,21 @@ defaults:
       type: "projects"
     values:
       layout: "page"
+
   - scope:
       path: ""
       type: "posts"
     values:
       comments: false                                   # Set to true to enable disqus comments
+
+  - scope:
+      path: ""
+      type: "CV"
+    values:
+      layout: "page"  
+
+### UTF-8 encoding###
+encoding: "utf-8"
 
 
 ### Exclude from processing ###
