@@ -1,5 +1,5 @@
 ---
-name: Configurable Logic Block (CLB) Design, Verification and Optimization
+name: Configurable Logic Block Design, Verification and Optimization
 tools: [Cadence]
 # image: https://www.sketchappsources.com/resources/source-image/project-neon-groove-music-ui.png
 image: ..\resources\projects\clb\cover_pic.png

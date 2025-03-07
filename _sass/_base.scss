@@ -3,12 +3,19 @@ html {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Fira Code', monospace;
 }
+// html {
+//   padding-left: calc(100vw - 100%);
+// }
 
-.badge {
-  font-weight: 500;
-}
+// body {
+//   font-family: "Poppins", sans-serif;
+// }
+
+// .badge {
+//   font-weight: 500;
+// }
 
 .bg-light,
 .badge-light {
@@ -24,4 +31,8 @@ body {
   * {
     color: $text-white !important;
   }
+}
+
+@supports (font-variation-settings: normal) {
+  code { font-family: 'Fira Code VF', monospace; }
 }
