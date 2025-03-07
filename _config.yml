@@ -1,9 +1,9 @@
 ### Site Settings ###
 title               : Anh Tran
 description         : >-
-                      I turn coffee :coffee: into code,
-                      use tabs over spaces
-                      and never broke production.
+                      Hi! I'm <strong>Tran Huy Hoang Anh</strong>, an MSE student in Electrical Engineering at the University of Pennsylvania. <br> 
+                      I have a deep passion for <strong>computer architecture, hardware design and AI</strong>, exploring their intersections to 
+                      drive innovation and efficiency.
 baseurl             : ""            # Change to empty quotes if you are hosting your site at <your-username>.github.io directly
 repository          : anhthh2207/anhthh2207.github.io      # Change to <your-username>/<your-username>.github.io (or remove it if you don't need remote projects)
 remote_theme        : yousinix/portfolYOU

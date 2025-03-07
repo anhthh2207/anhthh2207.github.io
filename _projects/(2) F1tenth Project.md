@@ -5,7 +5,7 @@ image: ..\resources\projects\f1tenth\thumbnail.gif
 description: We developed autonomous driving algorithms for F1/10 racing cars.
 ---
 
-#  Autonomous Driving Engine for F1/10 Racing Car
+#  Autonomous Driving Engines for F1/10 Racing Car
 
 <!-- The Movies Project is something like **Netflix**, the only difference is that **it's not real**! It doesn't exist! I just created it to demonstrate how the **showcase** page looks like and how you can write whatever you want with full markdown support.
 
