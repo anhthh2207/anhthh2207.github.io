@@ -7,7 +7,7 @@ description         : >-
 baseurl             : ""            # Change to empty quotes if you are hosting your site at <your-username>.github.io directly
 repository          : anhthh2207/anhthh2207.github.io      # Change to <your-username>/<your-username>.github.io (or remove it if you don't need remote projects)
 remote_theme        : yousinix/portfolYOU
-open_new_tab        : false                    # Opens external URLs in new tab (works for posts, projects and navbar only)
+open_new_tab        : true                    # Opens external URLs in new tab (works for posts, projects and navbar only)
 
 
 ### Plugins ###
@@ -33,9 +33,9 @@ author:
   # facebook          : Anh Tran
   github            : anhthh2207
 # gitlab            : your_username
+  linkedin          : anh-thh
   instagram         : _anh.thh
 # kaggle            : your_username
-  linkedin          : anh-thh
 # medium            : your_username
 # soundcloud        : your_username
 # spotify           : your_username
