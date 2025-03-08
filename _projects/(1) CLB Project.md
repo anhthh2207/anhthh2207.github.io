@@ -1,7 +1,6 @@
 ---
 name: Configurable Logic Block Design, Verification and Optimization
 tools: [Cadence]
-# image: https://www.sketchappsources.com/resources/source-image/project-neon-groove-music-ui.png
 image: ..\resources\projects\clb\cover_pic.png
 
 description: This project focuses on optimizing Configurable Logic Blocks (CLB) design by addressing timing hazards, and power-performance trade-offs to minimize the Figure of Merit.
@@ -11,17 +10,19 @@ description: This project focuses on optimizing Configurable Logic Blocks (CLB) 
 ---
 
 # Configurable Logic Block (CLB) Design, Verification and Optimization
-Configurable Logic Blocks (CLBs) are essential components of Field-Programmable Gate Arrays (FPGAs) that enable dynamic hardware updates and high-speed parallel computations. Designing a CLB involves overcoming challenges such as managing timing hazards among components, optimizing layout and wiring, and balancing power efficiency with computational performance. This project outlines our approach to these challenges and the procedures employed to minimize the Figure of Merit.
+Configurable Logic Blocks (CLBs) are essential components of Field-Programmable Gate Arrays (FPGAs) that enable dynamic hardware updates and high-speed parallel computations. Designing a CLB involves overcoming challenges such as managing timing hazards among components, optimizing layout and wiring, and balancing power efficiency with computational performance. This project outlines our approach to these challenges and the procedures employed to minimize the Figure of Merit. <br>
 
-## Table of Contents
+Key Components of the Configurable Logic Block includes:
 - [16-input Lookup Table (LUT)](#16-input-lookup-table-lut)
-- [SRAM Array Design](#sram-array-design)
-- [Non-overlapping Clock generator](#non-overlapping-clock-generator)
+- [SRAM Array](#sram-array)
 - [Serial In Parallel Out (SIPO) Register](#serial-in-parallel-out-sipo-register)
+- [Non-overlapping Clock Generator](#non-overlapping-clock-generator)
+
+Finally, these components are integrated to form a comprehensive CLB design:
 - [Configurable Logic Block](#configurable-logic-block-clb)
 
 
-### 16-input Lookup Table (LUT)
+## 16-input Lookup Table (LUT)
 <figure style="text-align: center;">
   <div style="display: flex; justify-content: center; margin-bottom: 10px;">
     <div style="margin-right: 10px;">
@@ -52,7 +53,7 @@ Configurable Logic Blocks (CLBs) are essential components of Field-Programmable 
 </figure>
 
 
-### SRAM Array Design
+## SRAM Array
 <!-- <figure style="text-align: center;">
   <img src="..\resources\projects\clb\sram\sram_cell.png" alt="Single Image" width="400" />
   <figcaption>Main caption for the image</figcaption>
@@ -94,7 +95,7 @@ Configurable Logic Blocks (CLBs) are essential components of Field-Programmable 
 
 
 
-### Serial In Parallel Out (SIPO) Register
+## Serial In Parallel Out (SIPO) Register
 <figure style="text-align: center;">
   <div style="display: flex; justify-content: center; margin-bottom: 10px;">
     <div style="margin-right: 10px;">
@@ -131,7 +132,7 @@ Configurable Logic Blocks (CLBs) are essential components of Field-Programmable 
 </figure>
 
 
-### Non-overlapping Clock Generator
+## Non-overlapping Clock Generator
 <figure style="text-align: center;">
   <div style="display: flex; justify-content: center; margin-bottom: 10px;">
     <div style="margin-right: 10px;">
@@ -146,7 +147,7 @@ Configurable Logic Blocks (CLBs) are essential components of Field-Programmable 
 </figure>
 
 
-### Configurable Logic Block (CLB)
+## Configurable Logic Block (CLB)
 <figure style="text-align: center;">
   <img src="..\resources\projects\clb\CLB_full_design.png" alt="Single Image" width="800" />
   <figcaption>Full design of CLB</figcaption>
