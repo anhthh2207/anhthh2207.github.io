@@ -6,6 +6,8 @@ description: We developed autonomous driving algorithms for F1/10 racing cars.
 ---
 
 #  Autonomous Driving Engines for F1/10 Racing Car
+This is a compilation of the methods that I with my team have developed for our F1/10 cars for the labs and races in the course ESE 6150 - Autonomous Racing Cars @ University of Pennsylvania.
+
 
 ## Table of content
 [1. Reactive methods](#1-reactive-methods)<br>
