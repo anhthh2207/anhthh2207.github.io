@@ -21,7 +21,7 @@ The very first algorithm we employed was PID wall-following. Its principle is st
   <img src="..\resources\projects\f1tenth\wall-follow-levined-blocked.gif" alt="Single Image" width="400" />
   <figcaption>PID wall-following</figcaption>
 </figure>
-This algorithm has a relatively simple implementation; however, it demands extensive time for tuning the PID gains. Moreover, it is inefficient in handling environmental singularities—for example, it struggles with sharp turns and indentations. Finally, achieving high speeds is almost impossible, as evidenced by significant wobbling even at lower velocities, which would be exacerbated at higher speeds.
+This algorithm has a relatively simple implementation; however, it demands extensive time for tuning the PID gains. Moreover, it is inefficient in handling environmental singularities—for example, it struggles with sharp turns and indentations. Finally, achieving high speeds is almost impossible, as evidenced by significant wobbling even at a low speed, which would be exacerbated at higher speeds.
 
 
 <!-- <figure style="text-align: center;">
@@ -33,7 +33,7 @@ This algorithm has a relatively simple implementation; however, it demands exten
   <figcaption>Gap follow in map with obstacles</figcaption>
 </figure> -->
 ### Gap-following
-By identifying the nearest obstacles or sharp disparities in the LIDAR data and masking out an area corresponding to the agent’s size, ggap-following algorithm defines gaps (open spaces) for navigation. The agent then moves toward the gap that is widest or extends the farthest.
+By identifying the nearest obstacles or sharp disparities in the LIDAR data and masking out an area corresponding to the agent’s size, gap-following algorithm defines gaps (open spaces) for navigation. The agent then moves toward the gap that is widest or extends the farthest.
 <figure style="text-align: center;">
   <div style="display: flex; justify-content: center; margin-bottom: 10px;">
     <div style="margin-right: 10px;">
@@ -47,9 +47,7 @@ By identifying the nearest obstacles or sharp disparities in the LIDAR data and 
   </div>
   <!-- <figcaption>Main caption for both subimages</figcaption> -->
 </figure>
-Apparently, this algorithm allows the robot to move more smoothly and at higher speeds than wall-following. However, it still exhibits the inherent limitation of reactive methods, namely that the generated trajectories are suboptimal.
-
-
+Apparently, this algorithm allows the robot to move more smoothly and at much higher speeds than wall-following. Additionally, thanks to its smooth and stable motion, the robot can easily avoid obstacles while exploring an unknown environment (at a conservative speed). However, it still exhibits the inherent limitation of reactive methods, namely that the generated trajectories are suboptimal.
 
 
 
