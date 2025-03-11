@@ -13,7 +13,7 @@ description: We developed autonomous driving algorithms for F1/10 racing cars.
 
 
 ## 1. Reactive methods
-Reactive methods are control strategies that use real-time sensor data to generate immediate responses without relying on complex planning or mapping. These methods prove effective when an agent lacks prior knowledge about its environment. However, their drawback is that the actions they generate are often suboptimal. Furthermore, making them work typically involves intensive fine-tuning of various parameters, which may not perform well under different environmental variations.
+Reactive methods are control strategies that utilize real-time sensor data to generate immediate responses without relying on complex planning or mapping, making them effective when the agent lacks prior knowledge about surrounding environment. However, these approaches are quite sensitive to environmental irregularities, require intensive parameter tuning, and often yield suboptimal trajectories.
 
 ### Wall-following
 The very first algorithm we employed was PID wall-following. Its principle is straightforward: the robot navigates along the wall while maintaining a fixed distance. The PID controller adjusts the steering angle to keep the distance between the agent and the wall constant.  
@@ -21,7 +21,7 @@ The very first algorithm we employed was PID wall-following. Its principle is st
   <img src="..\resources\projects\f1tenth\wall-follow-levined-blocked.gif" alt="Single Image" width="400" />
   <figcaption>PID wall-following</figcaption>
 </figure>
-This algorithm has a relatively simple implementation; however, it demands extensive time for tuning the PID gains. Moreover, it is inefficient in handling environmental singularities—for example, it struggles with sharp turns and indentations. Finally, achieving high speeds is almost impossible, as evidenced by significant wobbling even at a low speed, which would be exacerbated at higher speeds.
+This algorithm has a relatively simple implementation; however, it demands extensive time for tuning the PID gains. Moreover, it is inefficient in handling environmental singularities—for example, it struggles with sharp turns and indentations. Finally, achieving high velocities is almost impossible, as evidenced by significant wobbling even at a low speed, which would be exacerbated at higher speeds.
 
 
 <!-- <figure style="text-align: center;">
@@ -47,7 +47,7 @@ By identifying the nearest obstacles or sharp disparities in the LIDAR data and 
   </div>
   <!-- <figcaption>Main caption for both subimages</figcaption> -->
 </figure>
-Apparently, this algorithm allows the robot to move more smoothly and at much higher speeds than wall-following. Additionally, thanks to its smooth and stable motion, the robot can easily avoid obstacles while exploring an unknown environment (at a conservative speed). However, it still exhibits the inherent limitation of reactive methods, namely that the generated trajectories are suboptimal.
+Apparently, this algorithm allows for much smoother motion and higher speeds than wall-following. Additionally, thanks to its smooth and stable motion, the robot can easily avoid obstacles while exploring an unknown environment (at a conservative speed). However, it still exhibits the inherent limitation of reactive methods, namely that the generated trajectories are suboptimal.
 
 
 
