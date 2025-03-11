@@ -1,5 +1,5 @@
 ---
-name: Autonomous Driving Engines for F1/10
+name: Auto-driving Engines for F1/10
 tools: [Python, Ros2, Rviz, NVDIA Jetson Orin]
 image: ..\resources\projects\f1tenth\thumbnail.gif
 description: We developed autonomous driving algorithms for F1/10 racing cars.
@@ -65,6 +65,6 @@ Given a pre-planned trajectory and the agent's ability to accurately locate itse
 Despite its suprising simplicity, this algorithm can attain superior speed and stability compared to reactive approaches. Additionally, developers can easily combine it with other methods to optimize the input trajectory or speed management, further improving lap times.
 <br>
 <br>
-<div align="center"> <i>(The project is currently in progress and this article will be updated in the near future)</i> </div>
+<div align="center"> <i>The project is currently in progress and this article will be updated in the near future.</i> </div>
 
 <div align="center"> <i>If you have any questions or are interested in the project, please contact me for further information.</i> </div>
