@@ -57,7 +57,7 @@ Apparently, this algorithm allows for much smoother motion and higher speeds tha
 Reactive strategies are effective in well-structured and predictable environments but often struggle with local minima and unexpected oscillatory behavior. However, in racing, where even a few milliseconds can create huge difference, an optimal and efficient navigation is strictly required. Planning-based methods  bring us closer to this objective by leveraging available environmental information (e.g., maps, constraints) or prior experience (e.g., recorded paths), resulting in more stable and optimal performance.
 
 ### Pure pursuit
-Given a pre-planned trajectory and the agent's ability to accurately locate itself in the environment  (e.g., via SLAM or particle filter), pure pursuit algorithm computes driving commands by targeting a point at a fixed look-ahead distance along the planned path.
+Given a pre-planned trajectory and the agent's ability to accurately locate itself in the environment  (e.g., via SLAM and particle filter), pure pursuit algorithm computes driving commands by targeting a point at a fixed look-ahead distance along the planned path.
 <figure style="text-align: center;">
   <img src="..\resources\projects\f1tenth\pure-pursuit-slam-levine.gif" alt="Single Image" width="400" />
   <figcaption>Pure pursuit on Levine map attained by SLAM on real F1/10 car </figcaption>
