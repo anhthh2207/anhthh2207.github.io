@@ -60,10 +60,12 @@ Reactive strategies are effective in well-structured and predictable environment
 
 ### Pure pursuit
 Given a pre-planned trajectory and the agent's ability to accurately locate itself in the environment  (e.g., via SLAM and particle filter), pure pursuit algorithm computes driving commands by targeting a point at a fixed look-ahead distance along the planned path.
+
 <!-- <figure style="text-align: center;">
   <img src="..\resources\projects\f1tenth\pure-pursuit-slam-levine.gif" alt="Single Image" width="400" />
   <figcaption>Pure pursuit on Levine map attained by SLAM on real F1/10 car </figcaption>
 </figure> -->
+
 <figure style="text-align: center;">
   <div style="display: flex; justify-content: center; margin-bottom: 10px;">
     <div style="margin-right: 10px;">
@@ -79,7 +81,6 @@ Given a pre-planned trajectory and the agent's ability to accurately locate itse
       </p>
     </div>
   </div>
-</figure>
   <!-- <figcaption>Main caption for both subimages</figcaption> -->
 </figure>
 Despite its suprising simplicity, this algorithm delivers superior speed and stability compared to reactive approaches. Additionally, developers can easily combine it with other methods to optimize the input trajectory or speed management, further improving lap times.
