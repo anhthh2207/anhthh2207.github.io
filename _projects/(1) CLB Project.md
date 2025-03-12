@@ -6,12 +6,11 @@ image: ..\resources\projects\clb\cover_pic.png
 description: This project focuses on optimizing Configurable Logic Blocks (CLB) design by addressing timing hazards, and power-performance trade-offs to minimize the Figure of Merit.
 
 
-# external_url: https://www.google.com
 ---
 
 # Configurable Logic Block Design, Verification and Optimization
 <!-- Configurable Logic Blocks (CLBs) are essential components of Field-Programmable Gate Arrays (FPGAs) that enable dynamic hardware updates and high-speed parallel computations. Designing a CLB involves overcoming challenges such as managing timing hazards among components, optimizing layout and wiring, and balancing power efficiency with computational performance. This project outlines our approach to these challenges and the procedures employed to minimize the Figure of Merit. <br> -->
-In this project, my teammate and I designed a 16-bit Configurable Logic Block (CLB). It allows developers to model any 4-input combinational logic function. It is an essential block that provides flexibility for Field Programmable Gate Arrays (FPGAs).
+In this project, I with my teammate designed a 16-bit Configurable Logic Block (CLB). It allows developers to model any 4-input combinational logic function. It is an essential block that provides flexibility for Field Programmable Gate Arrays (FPGAs). The circuit was developed in 45nm Salicide 1.0V/1.8V 1P 11M technology supported in Cadence.
 
 Key Components of the Configurable Logic Block includes:
 - [16:1 Lookup Table (LUT)](#161-lookup-table-lut)
@@ -59,7 +58,7 @@ We begin with the design of a 2:1 MUX (similar to LUT, it selects one of two out
   <img src="..\resources\projects\clb\sram\sram_cell.png" alt="Single Image" width="400" />
   <figcaption>Main caption for the image</figcaption>
 </figure> -->
-SRAM cells are used to store the possible outputs for the LUT. The figure below shows the design of a single 6T SRAM cell, whose read-write are controlled by the Bit lines (BL and <span style="text-decoration: overline;">BL</span>) and the Word line (WL) signals through precharge and discharge actions (see a nice [tutorial](https://www.youtube.com/watch?v=kU2SsUUsftA&t=16s) about how SRAM cell works).
+SRAM cells are used to store the possible outputs for the LUT. The figure below shows the design of a single 6T SRAM cell, whose read-write are controlled by the Bit lines (BL and <span style="text-decoration: overline;">BL</span>) and the Word line (WL) signals through precharge and discharge actions (see a nice [tutorial](https://youtu.be/kU2SsUUsftA?si=ze4-9zVNDbIH421l) about how SRAM cell works).
 <figure style="text-align: center;">
   <div style="display: flex; justify-content: center; margin-bottom: 10px;">
     <div style="margin-right: 10px;">
@@ -174,7 +173,7 @@ After benchmarking our design, the performance parameters of the circuit are rep
   </thead>
   <tbody>
     <tr>
-      <td>Frequency</td>
+      <td>Max frequency</td>
       <td>1 GHz</td>
     </tr>
     <tr>
