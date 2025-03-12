@@ -116,7 +116,7 @@ To load data into the SRAM array, we use a SIPO register. It converts serial dat
   </div>
 </figure>
 
-A SIPO register is constructed by cascading D flip-flops, as demonstrated below.
+A SIPO register is constructed by cascading 16 D flip-flops, as demonstrated below.
 <figure style="text-align: center;">
   <!-- Sub Image 1 -->
   <div style="margin-bottom: 1px;">
