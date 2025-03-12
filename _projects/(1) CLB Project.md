@@ -192,4 +192,4 @@ After benchmarking our design, the performance parameters of the circuit are rep
 <p><strong>*</strong> <i>Active Energy</i>: energy consumed to cycle through all possible input combinations from 0 to 15 at the maximum operating frequency</p>
 
 <br>
-Here is the overall design procedure from our team for designing a 16-bit CLB. Additionally, the methods for sizing, resolving timing hazards, and circuit-level optimization are presented in detail in our report, which will be available upon request. Feel free to reach out if you need any further information or have any questions about the project 😀.
+Here is the overall design procedure from our team for designing a 16-bit CLB. Additionally, the methods for sizing, designing testing schematic, resolving timing hazards, and circuit-level optimization are presented in detail in our report, which will be available upon request. Feel free to reach out if you need any further information or have any questions about the project 😀.
