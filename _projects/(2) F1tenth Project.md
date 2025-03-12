@@ -8,6 +8,8 @@ description: We developed autonomous driving algorithms for F1/10 racing cars.
 #  Autonomous Driving Engines for F1/10 Racing Car
 This is a compilation of the methods that I with my team have developed for our F1/10 cars for the labs and races in the course ESE 6150 - Autonomous Racing Cars @ University of Pennsylvania.
 
+<strong>* <em>Please note that all animations in this article are displayed at 2x speed.</em></strong>
+
 
 ## Table of contents
 [1. Reactive methods](#1-reactive-methods)<br>
@@ -58,9 +60,27 @@ Reactive strategies are effective in well-structured and predictable environment
 
 ### Pure pursuit
 Given a pre-planned trajectory and the agent's ability to accurately locate itself in the environment  (e.g., via SLAM and particle filter), pure pursuit algorithm computes driving commands by targeting a point at a fixed look-ahead distance along the planned path.
-<figure style="text-align: center;">
+<!-- <figure style="text-align: center;">
   <img src="..\resources\projects\f1tenth\pure-pursuit-slam-levine.gif" alt="Single Image" width="400" />
   <figcaption>Pure pursuit on Levine map attained by SLAM on real F1/10 car </figcaption>
+</figure> -->
+<figure style="text-align: center;">
+  <div style="display: flex; justify-content: center; margin-bottom: 10px;">
+    <div style="margin-right: 10px;">
+      <img src="..\resources\projects\f1tenth\pure-pursuit-slam-levine.gif" alt="Image 1" width="400" />
+      <p style="text-align: center; max-width: 400px; margin: 0 auto; word-wrap: break-word;">
+        Pure pursuit on SLAM-estimated Levine map and trajectory from real F1/10 car
+      </p>
+    </div>
+    <div>
+      <img src="..\resources\projects\f1tenth\pure-pursuit-fastest.gif" alt="Image 2" width="400" />
+      <p style="text-align: center; max-width: 400px; margin: 0 auto; word-wrap: break-word;">
+        Enhanced pure pursuit with a smooth trajectory and dynamic speed control attained by filtering and interpolation
+      </p>
+    </div>
+  </div>
+</figure>
+  <!-- <figcaption>Main caption for both subimages</figcaption> -->
 </figure>
 Despite its suprising simplicity, this algorithm delivers superior speed and stability compared to reactive approaches. Additionally, developers can easily combine it with other methods to optimize the input trajectory or speed management, further improving lap times.
 <br>
