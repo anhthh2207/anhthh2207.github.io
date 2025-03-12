@@ -10,7 +10,7 @@ description: This project focuses on optimizing Configurable Logic Blocks (CLB) 
 
 # Configurable Logic Block Design, Verification and Optimization
 <!-- Configurable Logic Blocks (CLBs) are essential components of Field-Programmable Gate Arrays (FPGAs) that enable dynamic hardware updates and high-speed parallel computations. Designing a CLB involves overcoming challenges such as managing timing hazards among components, optimizing layout and wiring, and balancing power efficiency with computational performance. This project outlines our approach to these challenges and the procedures employed to minimize the Figure of Merit. <br> -->
-In this project, I with my teammate designed a 16-bit Configurable Logic Block (CLB). It allows developers to model any 4-input combinational logic function. It is an essential block that provides flexibility for Field Programmable Gate Arrays (FPGAs). The circuit was developed in <strong>45nm Salicide 1.0V/1.8V 1P 11M</strong> technology supported in Cadence.
+In this project, I with my teammate designed a 16-bit Configurable Logic Block (CLB), a circuit that can model any 4-input combinational logic function. It is an essential block that provides flexibility for Field Programmable Gate Arrays (FPGAs). The circuit was developed in <strong>45nm Salicide 1.0V/1.8V 1P 11M</strong> technology supported in Cadence.
 
 Key Components of the Configurable Logic Block includes:
 - [16:1 Lookup Table (LUT)](#161-lookup-table-lut)
