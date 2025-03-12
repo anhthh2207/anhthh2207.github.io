@@ -67,4 +67,4 @@ Despite its suprising simplicity, this algorithm delivers superior speed and sta
 <br>
 <div align="center"> <i>The project is currently in progress and will be updated in the near future.</i> </div>
 
-<div align="center"> <i>If you have any questions or are interested in the project, codebase, please contact me for further information.</i> </div>
+<div align="center"> <i>If you have any questions or are interested in the project, please contact me for further information.</i> </div>
