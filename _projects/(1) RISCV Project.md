@@ -1,6 +1,6 @@
 ---
 name: Pipelined RISCV Processor 
-tools: [FPGA, SystemVerilog, Yosys, Cocotb]
+tools: [SystemVerilog, FPGA, Yosys, Cocotb]
 image: ..\resources\projects\riscv_core\cover_pic.png
 
 description: A custom 32-bit RISC-V core featuring a fully pipelined datapath, along with direct-mapped I$ and D$, which interface with memory using the AXIL protocol.
@@ -93,7 +93,7 @@ Performance metrics and resource utilization of our  design are reported in the 
 **Note:** Since the *with-caches* version was later developed, several logic optimizations were made by us. As a result, its LUT and flip-flop usage is slightly more efficient compared to its predecessor.
 
 
-<div align="center"> <i> As part of the course policy, we are unable to publicly share our code. However, our full SystemVerilog implementation and other technical details can be made available upon request and will be considered on a case-by-case basis (typically shared in cases like recruitment processes or research unrelated to CIS 5710).</i> </div>
+<div align="center"> <i> As part of the course policy, we are unable to publicly share our code. However, our full SystemVerilog implementation and other technical details can be made available upon request and will be considered on a case-by-case basis (typically shared in cases like recruitment processes or work unrelated to CIS 5710).</i> </div>
 
 
 
