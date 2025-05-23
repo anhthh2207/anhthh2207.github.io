@@ -116,3 +116,8 @@ exclude:
   - CONTRIBUTING.md
   - LICENSE
   - "*.log"
+
+# to run web locally
+# ```
+# bundle exec jekyll serve
+# ```
