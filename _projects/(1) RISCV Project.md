@@ -16,7 +16,7 @@ This project was carried out by myself and my teammate, Khanh Tran (Eddie), as p
   <!-- <figcaption>SRAM array</figcaption> -->
 </figure>
 
-In this project, We developed a custom 32-bit RISC-V core using SystemVerilog. The technical specifications of our design are as follows:
+In this project, we developed a custom 32-bit RISC-V core using SystemVerilog. The technical specifications of our design are as follows:
 - **Architecture**: 32-bit RISC-V core implemented in SystemVerilog
 - **Pipeline**: Five-stage fully pipelined datapath featuring:
   - Full bypassing (forwarding) logic
