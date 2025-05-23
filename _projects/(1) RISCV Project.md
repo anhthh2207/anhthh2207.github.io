@@ -90,3 +90,9 @@ Performance metrics and resource utilization of our  design are reported in the 
 
 <div align="center"> <i> As part of the course policy, we are unable to publicly share our code. However, our full SystemVerilog implementation and other technical details can be made available upon request and will be considered on a case-by-case basis (typically shared in cases like recruitment processes or research unrelated to CIS 5710).</i> </div>
 
+
+
+<!-- pic sources:
+https://stackoverflow.com/questions/71474153/5-stage-risc-how-are-loads-handled
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.logic-fruit.com%2Fblog%2Fdigital-interfaces%2Faxi-full-axi-lite-interfaces%2F&psig=AOvVaw0pcoEapEplWRkzAPQ5HTrQ&ust=1748064446211000&source=images&cd=vfe&opi=89978449&ved=0CBcQjhxqFwoTCKC7r9TtuI0DFQAAAAAdAAAAABAE
+https://github.com/ulx3s -->
