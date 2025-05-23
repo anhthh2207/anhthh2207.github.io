@@ -11,6 +11,11 @@ description: A custom 32-bit RISC-V core featuring a fully pipelined datapath, a
 # Pipelined RISC-V Processor 
 This project was carried out by myself and my teammate, Khanh Tran (Eddie), as part of the CIS 5710 course during Spring 2025 at the University of Pennsylvania.
 
+<figure style="text-align: center;">
+  <img src="..\resources\projects\riscv_core\system_architecture.png" alt="Single Image" width="800" />
+  <!-- <figcaption>SRAM array</figcaption> -->
+</figure>
+
 In this project, We developed a custom 32-bit RISC-V core using SystemVerilog. The technical specifications of our design are as follows:
 - **Architecture**: 32-bit RISC-V core implemented in SystemVerilog
 - **Pipeline**: Five-stage fully pipelined datapath featuring:
