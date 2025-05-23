@@ -1,6 +1,6 @@
 ---
 name: Pipelined RISCV Processor 
-tools: [SystemVerilog, Yosys, Cocotb]
+tools: [FPGA, SystemVerilog, Yosys, Cocotb]
 image: ..\resources\projects\riscv_core\cover_pic.png
 
 description: A custom 32-bit RISC-V core featuring a fully pipelined datapath, along with direct-mapped I$ and D$, which interface with memory using the AXIL protocol.
