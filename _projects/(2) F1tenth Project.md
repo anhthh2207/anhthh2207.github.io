@@ -1,6 +1,6 @@
 ---
 name: Auto-driving Engines for F1/10
-tools: [Python, Ros2, Rviz, NVDIA Jetson Orin]
+# tools: [Python, Ros2, Rviz, NVDIA Jetson Orin]
 image: ..\resources\projects\f1tenth\thumbnail.gif
 description: We developed autonomous driving algorithms for F1/10 racing cars.
 ---

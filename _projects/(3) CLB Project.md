@@ -1,6 +1,6 @@
 ---
 name: Configurable Logic Block Design, Verification and Optimization
-tools: [Cadence]
+# tools: [Cadence]
 image: ..\resources\projects\clb\cover_pic.png
 
 description: This project focuses on optimizing Configurable Logic Blocks (CLB) design by addressing timing hazards, and power-performance trade-offs to minimize the Figure of Merit.

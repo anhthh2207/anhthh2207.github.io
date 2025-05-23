@@ -1,23 +1,23 @@
 <div class="row justify-content-center align-items-center p-4">
-  <div class="col-lg-4 col-md-6 text-center mt-4">
+  <div class="col-lg-5 col-md-7 text-center mt-4">
 
-    <!-- Fine Circle Responsive Image -->
-    <div id="container" class="my-2">
+    <!-- Fine Circle Responsive Image (narrower) -->
+    <div id="container" class="my-2 image-wrapper">
       <div id="dummy"></div>
       <div id="element">
         <img src="{{ site.author.image }}" alt="{{ site.title }}" class="circle-image wow animated zoomIn" data-wow-delay=".1s">
       </div>
     </div>
 
-    <p class="text-muted wow animated slideInUp" data-wow-delay=".15s">
-      <!-- {{ site.description }}  -->   <!-- This takes the input from _config.yml -->
-      Hi! I'm <strong>Anh Tran</strong>, an MSE student in Electrical Engineering at the University of Pennsylvania <img src="..\resources\icons\upenn_logo.png" alt="emoji" style="width:0.84em; height:0.95em; vertical-align:text-bottom; margin-bottom:+0.17em;">.<br> 
-      I have a deep passion for <strong>digital design, computer architecture and AI</strong>, exploring their intersections to 
-      drive innovation and efficiency. 
-    </p>
+    <!-- Wider Text Content -->
+    <div class="text-wrapper mx-auto mt-3">
+      <!-- <p class="text-muted wow animated slideInUp " data-wow-delay=".15s"> -->
+      <p class="text-muted minimal-text no-animation">
+        Hi! I'm <strong>Anh Tran</strong>, an MSE student in Electrical Engineering at the University of Pennsylvania 
+        <img src="../resources/icons/upenn_logo.png" alt="UPenn logo" style="width:0.84em; height:0.95em; vertical-align:text-bottom; margin-bottom:+0.17em;">.<br>
+        I have a deep passion for <strong>digital design, computer architecture and AI</strong>, exploring their intersections to drive innovation and efficiency.
+      </p>
+    </div>
 
   </div>
 </div>
-
-
-<!-- this control the landing (default) page -->

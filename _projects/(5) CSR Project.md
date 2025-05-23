@@ -1,7 +1,7 @@
 ---
 # name: Efficient DNN via Pruning & Sparse Representation
 name: Efficient DNN via Pruning & Sparse Matrix Compression
-tools: [Python, Torch]
+# tools: [Python, Torch]
 image: ..\resources\projects\csr\cover_pic.png
 
 description: We investigated various patterns and intesities of pruning; developed custom layer leveraging CSR format for efficient storage and inference of deep neural network.

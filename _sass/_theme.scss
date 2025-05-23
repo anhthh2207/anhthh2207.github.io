@@ -8,12 +8,12 @@
   }
 }
 
-// #theme-toggler:before {
-//   @include themed(content, "🌙", "🌞");
-// }
 #theme-toggler:before {
   @include themed(content, "🌙", "☀️");
 }
+// #theme-toggler:before {
+//   @include themed(content, "☾", "☼");
+// }
 
 
 .navbar-themed {

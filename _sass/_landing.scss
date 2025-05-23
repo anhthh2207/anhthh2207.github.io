@@ -26,3 +26,16 @@
   object-fit: cover;
   object-position: center;
 }
+
+.image-wrapper {
+  max-width: 300px; // or whatever suits your image size
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-wrapper {
+  max-width: 350px; // wider text
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
