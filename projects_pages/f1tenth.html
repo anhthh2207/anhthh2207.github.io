@@ -9,11 +9,11 @@
 </head>
 
 <body style="margin-top:40px; margin-bottom:40px">
-  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+  <table style="width:100%;max-width:850px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
     <tbody>
       <tr>
         <td style="padding:0px">
-          <div class="container" style="padding: 2.5%;">
+          <div class="container" style="padding: 0;">
             <header class="text-center mb-5">
               <h1><strong>Autonomous Driving Engines for F1/10 Racing Car</strong></h1>
             </header>
@@ -33,18 +33,18 @@
 
               <section id="reactive">
                 <h3>1. Reactive Methods</h3>
-                <p>Reactive methods utilize real-time sensor data to generate immediate responses without complex planning. They are sensitive to noise and often suboptimal in complex environments.</p>
+                <p>Reactive methods are control strategies that utilize real-time sensor data to generate immediate responses without relying on complex planning or mapping, making them effective when the agent lacks prior knowledge about surrounding environment. However, these approaches are quite sensitive to noise and uncertainty, have limited adaptability to complex scenarios, and often yield suboptimal behaviors.</p>
 
                 <h5>Wall-following</h5>
-                <p>The PID wall-following algorithm keeps a fixed distance to the wall using a PID controller.</p>
+                <p>The very first algorithm we employed was PID wall-following. Its principle is straightforward: the robot navigates along the wall while maintaining a fixed distance. The PID controller adjusts the steering angle to keep the distance between the agent and the wall constant.</p>
                 <div class="text-center">
                   <img src="../../assets/projects/f1tenth/wall-follow-levined-blocked.gif" alt="PID wall-following" width="400">
                   <p class="fst-italic">PID wall-following</p>
                 </div>
-                <p>While simple, it requires extensive PID tuning and struggles with high speeds or sharp turns.</p>
+                <p>This algorithm has a relatively simple implementation; however, it demands extensive time for tuning the PID gains. Moreover, it is inefficient in handling environmental irregularities—for example, it struggles with sharp turns and indentations. Finally, achieving high velocities is almost impossible, as evidenced by significant wobbling even at a low speed, which would be exacerbated at higher speeds.</p>
 
                 <h5>Gap-following</h5>
-                <p>This method identifies the largest gaps in LIDAR scans and drives towards them.</p>
+                <p>By identifying the nearest obstacles or sharp disparities in the LIDAR data and masking out an area corresponding to the agent’s size, gap-following algorithm defines gaps (open spaces) for navigation. The agent then moves toward the gap that is widest or extends the farthest.</p>
                 <div class="row text-center">
                   <div class="col-md-6">
                     <img src="../../assets/projects/f1tenth/gap-follow-levine-blocked.gif" alt="Gap-following no obstacle" class="img-fluid">
@@ -55,15 +55,15 @@
                     <p class="fst-italic">Gap-following in obstacle map</p>
                   </div>
                 </div>
-                <p>Gap-following achieves smoother navigation and better obstacle avoidance, but still lacks trajectory optimality.</p>
+                <p>Apparently, this algorithm allows for much smoother motion and higher speeds than wall-following. Additionally, thanks to its smooth and stable motion, the robot can easily avoid obstacles while exploring an unknown environment (at a conservative speed). However, it still exhibits the inherent limitation of reactive methods, namely that the generated trajectories are suboptimal.</p>
               </section>
 
               <section id="planning">
                 <h3>2. Planning-based Methods</h3>
-                <p>These methods improve performance by utilizing prior environmental knowledge or planned paths.</p>
+                <p>Reactive strategies are effective in well-structured and predictable environments but often struggle with local minima and unexpected oscillatory behavior. However, in racing, where even a few milliseconds can create huge difference, an optimal and efficient navigation is strictly required. Planning-based methods bring us closer to this objective by leveraging available environmental information (e.g., maps, constraints) or prior experience (e.g., recorded paths), resulting in more stable and optimal performance.</p>
 
                 <h5>Pure Pursuit</h5>
-                <p>Pure pursuit uses a look-ahead point on a pre-defined trajectory for control.</p>
+                <p>Given a pre-planned trajectory and the agent’s ability to accurately locate itself in the environment (e.g., via SLAM and particle filter), pure pursuit algorithm computes driving commands by targeting a point at a fixed look-ahead distance along the planned path.</p>
                 <div class="row text-center">
                   <div class="col-md-6">
                     <img src="../../assets/projects/f1tenth/pure-pursuit-slam-levine.gif" alt="Pure pursuit SLAM" class="img-fluid">
@@ -74,7 +74,7 @@
                     <p class="fst-italic">Enhanced pure pursuit with trajectory smoothing</p>
                   </div>
                 </div>
-                <p>Despite its simplicity, pure pursuit enables fast, stable, and effective path tracking, especially when paired with advanced speed control strategies.</p>
+                <p>Despite its suprising simplicity, this algorithm delivers superior speed and stability compared to reactive approaches. Additionally, developers can easily combine it with other methods to optimize the input trajectory or speed management, further improving lap times.</p>
               </section>
 
               <div class="text-center mt-4">
