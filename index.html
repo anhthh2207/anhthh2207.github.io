@@ -9,7 +9,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    
+
+    <style>
+      .project-box {
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* base shadow */
+        transition: box-shadow 0.3s ease, transform 0.3s ease;
+      }
+
+      .project-box:hover {
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18); /* stronger shadow */
+        transform: translateY(-1px); /* float effect */
+      }
+    </style>
+        
   </head>
 
   <body>
@@ -57,274 +73,18 @@
           <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
 
-    <!-- <tr onmouseout="bolt3d_stop()" onmouseover="bolt3d_start()"  bgcolor="#ffffd0"> -->
-    <tr onmouseout="bolt3d_stop()" onmouseover="bolt3d_start()"  bgcolor="#ffffff">
-    <!-- <tr onmouseout="r3r_stop()" onmouseover="r3r_start()"> -->
-      <td style="padding:16px;width:20%;vertical-align:middle">
-        <div class="one">
-          <div class="two" id='bolt3d_image'><video  width=100% height=100% muted autoplay loop>
-          <source src="assets/projects/riscv_core/thumbnail.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-
-          </video></div>
-          <img src='assets/projects/riscv_core/cover_pic.png' width="160">
-        </div>
-        <script type="text/javascript">
-          function bolt3d_start() {
-            document.getElementById('bolt3d_image').style.opacity = "1";
-          }
-
-          function bolt3d_stop() {
-            document.getElementById('bolt3d_image').style.opacity = "0";
-          }
-          bolt3d_stop()
-        </script>
-      </td>
-      <td style="padding:8px;width:80%;vertical-align:middle">
-        <!-- <a href="https://szymanowiczs.github.io/bolt3d"> -->
-        <!-- <a href="/projects/riscv/"> -->
-        <a href="projects_pages/riscv.html">
-          <span class="papertitle">Pipelined RISCV Processor</span>
-        </a>
-        <!-- <br>
-        <a href="https://szymanowiczs.github.io/">Stanislaw Szymanowicz</a>,
-        <a href="https://jasonyzhang.com">Jason Y. Zhang</a>,
-        <a href="https://pratulsrinivasan.github.io">Pratul Srinivasan</a>,
-        <a href="https://ruiqigao.github.io">Ruiqi Gao</a>,
-        <a href="https://github.com/ArthurBrussee">Arthur Brussee</a>,
-        <a href="https://holynski.org">Aleksander Holynski</a>,
-        <a href="https://ricardomartinbrualla.com">Ricardo Martin-Brualla</a>,
-		<strong>Jonathan T. Barron</strong>,
-        <a href="https://henzler.github.io">Philipp Henzler</a>
-        <br> -->
-        <!-- <em>arXiv</em>, 2025 -->
-        <br>
-        <a href="projects_pages/riscv.html">project page</a>
-        /
-        <a href="https://github.com/anhthh2207/cis5710-homework.git">code</a>
-        <p></p>
-        <p>
-    A custom 32-bit RISC-V core in SystemVerilog with a five-stage fully pipelined datapath, including full forwarding and hazard 
-    control. It features I$ and D$ that interface with main memory via the AXIL protocol, along with low-latency 
-    operators such as a Carry-Lookahead Adder and an 8-cycle divider. 
-        </p>
-      </td>
-    </tr>
-
-
-    <tr onmouseout="bolt3d_stop()" onmouseover="bolt3d_start()"  bgcolor="#e0e0e0">
-    <!-- <tr onmouseout="r2r_stop()" onmouseover="r2r_start()"> -->
-      <td style="padding:16px;width:20%;vertical-align:middle">
-        <div class="one">
-          <div class="two" id='r2r_image'><video  width=100% muted autoplay loop>
-          <!-- <source src="images/r2r.mp4" type="video/mp4"> -->
-          <source src="assets/projects/csr/cover_pic.png">
-          Your browser does not support the video tag.
-          </video></div>
-          <img src='assets/projects/csr/cover_pic.png' width=100%>
-        </div>
-        <script type="text/javascript">
-          function r2r_start() {
-            document.getElementById('r2r_image').style.opacity = "1";
-          }
-
-          function r2r_stop() {
-            document.getElementById('r2r_image').style.opacity = "0";
-          }
-          r2r_stop()
-        </script>
-      </td>
-      <td style="padding:8px;width:80%;vertical-align:middle">
-        <a href="https://relight-to-reconstruct.github.io/">
-          <span class="papertitle">Efficient DNN via Pruning & Sparse Matrix Compression</span>
-        </a>
-        <!-- <br>
-        <a href="https://hadizayer.github.io/">Hadi Alzayer</a>,
-        <a href="https://henzler.github.io/">Philipp Henzler</a>,
-				<strong>Jonathan T. Barron</strong>, 
-        <a href="https://jbhuang0604.github.io/">Jia-Bin Huang</a>,
-        <a href="https://pratulsrinivasan.github.io/">Pratul P. Srinivasan</a>, 
-        <a href="https://dorverbin.github.io/">Dor Verbin</a>
-        <br>
-        <em>CVPR</em>, 2025 &nbsp <font color=#FF8080><strong>(Highlight)</strong></font> -->
-        <br>
-        <a href="https://relight-to-reconstruct.github.io/">project page</a>
-        /
-        <a href="https://arxiv.org/abs/2412.15211">code</a>
-        <p></p>
-        <p>
-        We investigated various patterns and intesities of pruning; developed custom layer leveraging CSR format for efficient 
-        storage and inference of deep neural network.
-        </p>
-      </td>
-    </tr>
-
-
-    <!-- 3rd project -->
-    <tr onmouseout="bolt3d_stop()" onmouseover="bolt3d_start()"  bgcolor="#ffffff">
-      <td style="padding:16px;width:20%;vertical-align:middle">
-        <div class="one">
-          <div class="two" id='bolt3d_image'><video  width=100% height=100% muted autoplay loop>
-          <!-- <source src="assets/projects/riscv_core/thumbnail.mp4" type="video/mp4"> -->
-          <source src="assets/projects/clb/cover_pic.png">
-          Your browser does not support the video tag.
-
-          </video></div>
-          <img src='assets/projects/clb/cover_pic.png' width="160">
-        </div>
-        <script type="text/javascript">
-          function bolt3d_start() {
-            document.getElementById('bolt3d_image').style.opacity = "1";
-          }
-
-          function bolt3d_stop() {
-            document.getElementById('bolt3d_image').style.opacity = "0";
-          }
-          bolt3d_stop()
-        </script>
-      </td>
-      <td style="padding:8px;width:80%;vertical-align:middle">
-        <a href="projects_pages/clb.html">
-          <span class="papertitle">Configurable Logic Block Design, Verification and Optimization</span>
-        </a>
-        <br>
-        <a href="projects_pages/clb.html">project page</a>
-        <p></p>
-        <p>
-    This project focuses on optimizing Configurable Logic Blocks (CLB) design by addressing timing hazards, and 
-    power-performance trade-offs to minimize the Figure of Merit.
-        </p>
-      </td>
-    </tr>
-
-
-    <!-- 4th project  -->
-    <tr onmouseout="bolt3d_stop()" onmouseover="bolt3d_start()"  bgcolor="#ffffff">
-      <td style="padding:16px;width:20%;vertical-align:middle">
-        <div class="one">
-          <div class="two" id='bolt3d_image'><video  width=100% height=100% muted autoplay loop>
-          <!-- <source src="assets/projects/riscv_core/thumbnail.mp4" type="video/mp4"> -->
-          <source src="assets/projects/f1tenth/thumbnail.gif">
-          Your browser does not support the video tag.
-
-          </video></div>
-          <img src='assets/projects/f1tenth/thumbnail.gif' width="160">
-        </div>
-        <script type="text/javascript">
-          function bolt3d_start() {
-            document.getElementById('bolt3d_image').style.opacity = "1";
-          }
-
-          function bolt3d_stop() {
-            document.getElementById('bolt3d_image').style.opacity = "0";
-          }
-          bolt3d_stop()
-        </script>
-      </td>
-      <td style="padding:8px;width:80%;vertical-align:middle">
-        <a href="projects_pages/f1tenth.html">
-          <span class="papertitle">Auto-driving Engines for F1/10</span>
-        </a>
-        <br>
-        <a href="projects_pages/f1tenth.html">project page</a>
-        /
-        <a href="https://github.com/anhthh2207/cis5710-homework.git">code</a>
-        <p></p>
-        <p>
-    We designed autonomous driving systems for F1/10 racing cars, featuring SLAM, motion planning, optimal control, deep learning-
-    based perception, and integration across simulation and hardware platforms.
-        </p>
-      </td>
-    </tr>
-
-
-    <!-- 5th project  -->
-    <tr onmouseout="bolt3d_stop()" onmouseover="bolt3d_start()"  bgcolor="#ffffff">
-      <td style="padding:16px;width:20%;vertical-align:middle">
-        <div class="one">
-          <div class="two" id='bolt3d_image'><video  width=100% height=100% muted autoplay loop>
-          <!-- <source src="assets/projects/riscv_core/thumbnail.mp4" type="video/mp4"> -->
-          <source src="assets/projects/auto_solartracker/thumbnail.gif">
-          Your browser does not support the video tag.
-
-          </video></div>
-          <img src='assets/projects/auto_solartracker/thumbnail.gif' width="160">
-        </div>
-        <script type="text/javascript">
-          function bolt3d_start() {
-            document.getElementById('bolt3d_image').style.opacity = "1";
-          }
-
-          function bolt3d_stop() {
-            document.getElementById('bolt3d_image').style.opacity = "0";
-          }
-          bolt3d_stop()
-        </script>
-      </td>
-      <td style="padding:8px;width:80%;vertical-align:middle">
-        <a href="https://github.com/anhthh2207/auto-solar-tracker">
-          <span class="papertitle">Automatic Solar Tracker</span>
-        </a>
-        <br>
-        <a href="https://github.com/anhthh2207/auto-solar-tracker">code</a>
-        <p></p>
-        <p>
-    Automatic Solar Tracker is a double-axis system that optimizes solar panel positioning using LDR sensors and a servo motor, 
-    developed on Tiva TM4C123GH6PM microcontroller.
-        </p>
-      </td>
-    </tr>
-
-
-    <!-- <tr onmouseout="bolt3d_stop()" onmouseover="bolt3d_start()"  bgcolor="#ffffff">
-      <td style="padding:16px;width:20%;vertical-align:middle">
-        <div class="one">
-          <div class="two" id='bolt3d_image'><video  width=100% height=100% muted autoplay loop>
-          <source src="assets/projects/lc3/thumbnail.png">
-          Your browser does not support the video tag.
-
-          </video></div>
-          <img src='assets/projects/lc3/thumbnail.png' width="160">
-        </div>
-        <script type="text/javascript">
-          function bolt3d_start() {
-            document.getElementById('bolt3d_image').style.opacity = "1";
-          }
-
-          function bolt3d_stop() {
-            document.getElementById('bolt3d_image').style.opacity = "0";
-          }
-          bolt3d_stop()
-        </script>
-      </td>
-      <td style="padding:8px;width:80%;vertical-align:middle">
-        <a href="https://github.com/anhthh2207/lc3-virtual-machine">
-          <span class="papertitle">LC-3 Virtual Machine</span>
-        </a>
-        <br>
-        <a href="https://github.com/anhthh2207/lc3-virtual-machine">code</a>
-        <p></p>
-        <p>
-    This project implements the LC-3 (Little Computer 3) architecture in C. The implementation is verified and demonstrated 
-    using games such as 2048, Hangman, and Rogue.
-        </p>
-      </td>
-    </tr> -->
-
-
-    <!-- 6th project  -->
-    <tr onmouseout="bolt3d_stop()" onmouseover="bolt3d_start()" bgcolor="#ffffff">
-      <td colspan="2" style="padding:16px;">
-        <div class="project-box" style="display: flex; align-items: center; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); border-radius: 10px; overflow: hidden;">
+   <tr onmouseout="bolt3d_stop()" onmouseover="bolt3d_start()" bgcolor="#ffffff">
+      <td colspan="2" style="padding:4px 0;">
+        <div class="project-box">
           <div style="width: 20%; padding: 16px;">
             <div class="one">
               <div class="two" id='bolt3d_image'>
-                <video width="100%" height="100%" muted autoplay loop style="display: block;">
-                  <source src="assets/projects/lc3/thumbnail.png">
+                <video width="100%" height="100%" muted autoplay loop>
+                  <source src="assets/projects/riscv_core/thumbnail.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
               </div>
-              <img src='assets/projects/lc3/thumbnail.png' width="160" style="display: block;">
+              <img src='assets/projects/riscv_core/cover_pic.png' width="160">
             </div>
             <script type="text/javascript">
               function bolt3d_start() {
@@ -338,15 +98,172 @@
             </script>
           </div>
           <div style="width: 80%; padding: 16px;">
-            <a href="https://github.com/anhthh2207/lc3-virtual-machine">
-              <span class="papertitle">LC-3 Virtual Machine</span>
+            <a href="projects_pages/riscv.html">
+              <span class="papertitle">Pipelined RISCV Processor</span>
             </a>
             <br>
-            <a href="https://github.com/anhthh2207/lc3-virtual-machine">code</a>
+            <a href="projects_pages/riscv.html">project page</a> /
+            <a href="https://github.com/anhthh2207/cis5710-homework.git">code</a>
             <p></p>
             <p>
-              This project implements the LC-3 (Little Computer 3) architecture in C. The implementation is verified and demonstrated
-              using games such as 2048, Hangman, and Rogue.
+              A custom 32-bit RISC-V core in SystemVerilog with a five-stage fully pipelined datapath, including full forwarding
+              and hazard control. It features I$ and D$ that interface with main memory via the AXIL protocol, along with
+              low-latency operators such as a Carry-Lookahead Adder and an 8-cycle divider.
+            </p>
+          </div>
+        </div>
+      </td>
+    </tr>
+
+
+     <tr onmouseout="r2r_stop()" onmouseover="r2r_start()" bgcolor="#ffffff">
+      <td colspan="2" style="padding:4px 0;">
+        <div class="project-box">
+          <div style="width: 20%; padding: 16px;">
+            <div class="one">
+              <div class="two" id='r2r_image'>
+                <video width="100%" muted autoplay loop>
+                  <source src="assets/projects/csr/cover_pic.png">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <img src='assets/projects/csr/cover_pic.png' width="160">
+            </div>
+            <script type="text/javascript">
+              function r2r_start() {
+                document.getElementById('r2r_image').style.opacity = "1";
+              }
+              function r2r_stop() {
+                document.getElementById('r2r_image').style.opacity = "0";
+              }
+              r2r_stop();
+            </script>
+          </div>
+          <div style="width: 80%; padding: 16px;">
+            <a href="https://relight-to-reconstruct.github.io/">
+              <span class="papertitle">Efficient DNN via Pruning & Sparse Matrix Compression</span>
+            </a>
+            <br>
+            <a href="https://relight-to-reconstruct.github.io/">project page</a> /
+            <a href="https://arxiv.org/abs/2412.15211">code</a>
+            <p></p>
+            <p>
+              We investigated various patterns and intensities of pruning; developed custom layer leveraging CSR format for efficient storage and inference of deep neural network.
+            </p>
+          </div>
+        </div>
+      </td>
+    </tr>
+
+    <tr onmouseout="bolt3d_stop()" onmouseover="bolt3d_start()" bgcolor="#ffffff">
+      <td colspan="2" style="padding:4px 0;">
+        <div class="project-box">
+          <div style="width: 20%; padding: 16px;">
+            <div class="one">
+              <div class="two" id='bolt3d_image'>
+                <video width="100%" height="100%" muted autoplay loop>
+                  <source src="assets/projects/clb/cover_pic.png">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <img src='assets/projects/clb/cover_pic.png' width="160">
+            </div>
+            <script type="text/javascript">
+              function bolt3d_start() {
+                document.getElementById('bolt3d_image').style.opacity = "1";
+              }
+              function bolt3d_stop() {
+                document.getElementById('bolt3d_image').style.opacity = "0";
+              }
+              bolt3d_stop();
+            </script>
+          </div>
+          <div style="width: 80%; padding: 16px;">
+            <a href="projects_pages/clb.html">
+              <span class="papertitle">Configurable Logic Block Design, Verification and Optimization</span>
+            </a>
+            <br>
+            <a href="projects_pages/clb.html">project page</a>
+            <p></p>
+            <p>
+              This project focuses on optimizing Configurable Logic Blocks (CLB) design by addressing timing hazards, and power-performance trade-offs to minimize the Figure of Merit.
+            </p>
+          </div>
+        </div>
+      </td>
+    </tr>
+
+    <tr onmouseout="bolt3d_stop()" onmouseover="bolt3d_start()" bgcolor="#ffffff">
+      <td colspan="2" style="padding:4px 0;">
+        <div class="project-box">
+          <div style="width: 20%; padding: 16px;">
+            <div class="one">
+              <div class="two" id='bolt3d_image'>
+                <video width="100%" height="100%" muted autoplay loop>
+                  <source src="assets/projects/f1tenth/thumbnail.gif">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <img src='assets/projects/f1tenth/thumbnail.gif' width="160">
+            </div>
+            <script type="text/javascript">
+              function bolt3d_start() {
+                document.getElementById('bolt3d_image').style.opacity = "1";
+              }
+              function bolt3d_stop() {
+                document.getElementById('bolt3d_image').style.opacity = "0";
+              }
+              bolt3d_stop();
+            </script>
+          </div>
+          <div style="width: 80%; padding: 16px;">
+            <a href="projects_pages/f1tenth.html">
+              <span class="papertitle">Auto-driving Engines for F1/10</span>
+            </a>
+            <br>
+            <a href="projects_pages/f1tenth.html">project page</a> /
+            <a href="https://github.com/anhthh2207/cis5710-homework.git">code</a>
+            <p></p>
+            <p>
+              We designed autonomous driving systems for F1/10 racing cars, featuring SLAM, motion planning, optimal control, deep learning-based perception, and integration across simulation and hardware platforms.
+            </p>
+          </div>
+        </div>
+      </td>
+    </tr>
+
+    <tr onmouseout="bolt3d_stop()" onmouseover="bolt3d_start()" bgcolor="#ffffff">
+      <td colspan="2" style="padding:4px 0;">
+        <div class="project-box">
+          <div style="width: 20%; padding: 16px;">
+            <div class="one">
+              <div class="two" id='bolt3d_image'>
+                <video width="100%" height="100%" muted autoplay loop>
+                  <source src="assets/projects/auto_solartracker/thumbnail.gif">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <img src='assets/projects/auto_solartracker/thumbnail.gif' width="160">
+            </div>
+            <script type="text/javascript">
+              function bolt3d_start() {
+                document.getElementById('bolt3d_image').style.opacity = "1";
+              }
+              function bolt3d_stop() {
+                document.getElementById('bolt3d_image').style.opacity = "0";
+              }
+              bolt3d_stop();
+            </script>
+          </div>
+          <div style="width: 80%; padding: 16px;">
+            <a href="https://github.com/anhthh2207/auto-solar-tracker">
+              <span class="papertitle">Automatic Solar Tracker</span>
+            </a>
+            <br>
+            <a href="https://github.com/anhthh2207/auto-solar-tracker">code</a>
+            <p></p>
+            <p>
+              Automatic Solar Tracker is a double-axis system that optimizes solar panel positioning using LDR sensors and a servo motor, developed on Tiva TM4C123GH6PM microcontroller.
             </p>
           </div>
         </div>
