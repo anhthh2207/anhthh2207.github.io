@@ -56,27 +56,55 @@
 
                             <section id="sram">
                                 <h3>SRAM Array</h3>
-                                <p>Each 6T SRAM cell holds one output bit. We use control lines (WL, PC, W_EN) to read/write efficiently.</p>
+                                <p>
+                                    SRAM cells are used to store the possible outputs for the LUT. The figure below shows the design of a single 6T SRAM cell, whose read-write are controlled by the Bit lines (BL and <span style="text-decoration: overline;">BL</span>) and the Word line (WL) signals through precharge and discharge actions. See a nice 
+                                    <a href="https://youtu.be/kU2SsUUsftA?si=ze4-9zVNDbIH421l" target="_blank">tutorial</a> 
+                                    about how an SRAM cell works.
+                                </p>
                                 <div class="text-center">
                                     <img src="../../assets/projects/clb/sram/sram_cell.png" width="400">
                                     <img src="../../assets/projects/clb/sram/sram_symbol.png" width="300">
                                     <p>6T SRAM cell and its symbol</p>
+                                </div>
+                                <p>
+                                    However, to control the memory cell more robustly and facilitate integration with other components, we have designed additional peripherals and ports:
+                                </p>
+                                <ul>
+                                    <li><strong>PC</strong>: Precharge condition</li>
+                                    <li><strong>W_EN</strong>: Write enable</li>
+                                    <li><strong>WL</strong>: Word line</li>
+                                    <li><strong>DATA</strong>: Write input</li>
+                                    <li><strong>OUT</strong>: Read output</li>
+                                </ul>
+
+                                <div class="text-center">
                                     <img src="../../assets/projects/clb/sram/sram_cell_full.png" width="400">
                                     <img src="../../assets/projects/clb/sram/sram_cell_full_symbol.png" width="300">
                                     <p>SRAM with peripherals</p>
-                                    <img src="../../assets/projects/clb/sram/sram_array.png" width="800">
+                                </div>
+                                
+                                <p>
+                                    Sixteen identical cells are combined into a 16-bit SRAM array.
+                                </p>
+
+                                <div class="text-center">
+                                    <img src="../../assets/projects/clb/sram/sram_array.png" width="750">
                                     <p>16-bit SRAM array</p>
                                 </div>
                             </section>
 
                             <section id="sipo">
                                 <h3>Serial In Parallel Out (SIPO) Register</h3>
-                                <p>Converts serial data to parallel using 16 cascaded D Flip-Flops.</p>
-                                <!-- <div class="text-center", style="overflow-x: auto; white-space: nowrap;"> -->
+                                <p>To load data into the SRAM array, we use a SIPO register. It converts serial data into parallel data by receiving one bit at a time and then outputting the entire set of taken bits simultaneously as a parallel word.</p>
                                 <div class="text-center">
                                     <img src="../../assets/projects/clb/sipo/ff_noQ_circuit.png" width="550">
                                     <img src="../../assets/projects/clb/sipo/ff_noQ_symbol.png" width="200">
                                     <p>D Flip-Flop schematic and symbol</p>
+                                </div>
+                                <p>
+                                    A SIPO register is constructed by cascading 16 D flip-flops, as demonstrated below.
+                                </p>
+                                <div class="text-center">
                                     <img src="../../assets/projects/clb/sipo/shift-register-w-arrow.gif" width="400">
                                     <img src="../../assets/projects/clb/sipo/sipo_visualization.png" width="400">
                                     <img src="../../assets/projects/clb/sipo/SIPO-1024x452.png" width="400">
@@ -86,7 +114,7 @@
 
                             <section id="clk">
                                 <h3>Non-overlapping Clock Generator</h3>
-                                <p>Generates CLK and complement CLK signals for flip-flops and control units.</p>
+                                <p>As can be observed, several components, particularly the flip-flops, utilize both CLK and CLK as inputs. Consequently, we developed a module to generate two complementary clock signals from a single source.</p>
                                 <div class="text-center">
                                     <img src="../../assets/projects/clb/clk/clock_circuit.png" width="550">
                                     <img src="../../assets/projects/clb/clk/clock_symbol.png" width="200">
@@ -98,11 +126,14 @@
                                 <h3>Configurable Logic Block (CLB)</h3>
                                 <p>All modules are integrated into a unified CLB design supporting any 4-input combinational function.</p>
                                 <div class="text-center">
-                                    <img src="../../assets/projects/clb/CLB_full_design.png" width="800">
+                                    <img src="../../assets/projects/clb/CLB_full_design.png" width="750">
                                     <p>Complete CLB schematic</p>
                                 </div>
 
                                 <h4 class="mt-4">Performance Metrics</h4>
+                                <p>
+                                    After benchmarking our design, the performance parameters of the circuit are reported in the table below:
+                                </p>
                                 <table class="table table-bordered text-center w-50 mx-auto">
                                     <thead class="table-light">
                                         <tr><th>Metric</th><th>Value</th></tr>
@@ -113,10 +144,10 @@
                                         <tr><td>Active Energy</td><td>1.895 × 10<sup>-3</sup> nJ</td></tr>
                                     </tbody>
                                 </table>
-                                <p><strong>*</strong> <em>Loading Energy</em>: Energy to load all bits into SRAM</p>
-                                <p><strong>*</strong> <em>Active Energy</em>: Energy to evaluate all 16 combinations at max frequency</p>
+                                <p><strong>*</strong> <em>Loading Energy</em>: energy consumed by the entire circuit to load all the data into the SRAM</p>
+                                <p><strong>*</strong> <em>Active Energy</em>: energy consumed to cycle through all possible input combinations from 0 to 15 at the maximum operating frequency</p>
 
-                                <p class="mt-4">Full design procedure, sizing, testing, and optimization details are available upon request. Feel free to contact us if you have any questions 😀</p>
+                                <p class="mt-4">Here is the overall design procedure from our team for designing a 16-bit CLB. Additionally, the methods for sizing, designing testing schematic, resolving timing hazards, and circuit-level optimization are presented in detail in our report, which will be available upon request. Feel free to reach out if you need any further information or have any questions about the project 😀</p>
                             </section>
                         </main>
                     </div>
