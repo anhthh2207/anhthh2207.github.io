@@ -36,11 +36,18 @@
 
                             <section id="lut">
                                 <h3>16:1 Lookup Table (LUT)</h3>
-                                <p>The 16:1 LUT stores 2<sup>4</sup> output values and is configurable to implement any 4-input logic function using a MUX tree.</p>
+                                <p>The first component in our design is the 16:1 LUT. It accepts 4 binary inputs and stores 16 output values, corresponding to 2<sup>4</sup> possible input combinations. When the LUT receives 4 input values, these values are used as an address to look up the corresponding output from the pre-stored array. The beauty of LUT is its configurability; by changing the pre-stored array, the LUT can implement any logical function.</p>
                                 <div class="text-center">
                                     <img src="../../assets/projects/clb/lut/mux21.png" width="400" alt="2:1 MUX">
                                     <img src="../../assets/projects/clb/lut/mux21_sym.png" width="300" alt="2:1 MUX Symbol">
                                     <p>2:1 Multiplexer design and symbol</p>
+                                </div>
+                                
+                                <p>
+                                We begin with the design of a 2:1 MUX (similar to LUT, it selects one of two outputs based on a select line). A LUT can be constructed by connecting 15 MUXes in a tree structure, as shown below. Two CMOS logic inverters at the output function as serve as a buffer, restoring the voltage after pass-transistor logic degradation in the MUXes.
+                                </p>
+
+                                <div class="text-center">
                                     <img src="../../assets/projects/clb/lut/lut.png" width="400" alt="16-input LUT">
                                     <img src="../../assets/projects/clb/lut/lut_symb.png" width="300" alt="LUT Symbol">
                                     <p>16-input LUT design and symbol</p>
