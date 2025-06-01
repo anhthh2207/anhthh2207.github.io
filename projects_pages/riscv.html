@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pipelined RISC-V Processor</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+
+<body style="margin-top:40px; margin-bottom:40px">
+  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+    <tbody>
+      <tr>
+        <td style="padding:0px">
+          <div class="container" style="padding: 2.5%;">
+            <header class="text-center mb-5">
+              <h1><strong>Pipelined RISC-V Processor</strong></h1>
+            </header>
+
+            <main>
+              <p>This project was carried out by myself and my teammate, Khanh Tran (Eddie), as part of the CIS 5710 course during Spring 2025 at the University of Pennsylvania.</p>
+
+              <figure class="text-center my-4">
+                <img src="../../assets/projects/riscv_core/system_architecture.png" alt="System Architecture" width="800">
+                <!-- <figcaption class="fst-italic">SRAM array</figcaption> -->
+              </figure>
+
+              <p>In this project, we developed a custom 32-bit RISC-V core using SystemVerilog. The technical specifications of our design are as follows:</p>
+              <ul>
+                <li><strong>Architecture:</strong> 32-bit RISC-V core implemented in SystemVerilog</li>
+                <li><strong>Pipeline:</strong> Five-stage fully pipelined datapath featuring:
+                  <ul>
+                    <li>Full bypassing (forwarding) logic</li>
+                    <li>Comprehensive stall control to handle data and control hazards</li>
+                  </ul>
+                </li>
+                <li><strong>Cache:</strong>
+                  <ul>
+                    <li>Direct-mapped data cache (D$)</li>
+                    <li>Direct-mapped instruction cache (I$) (currently under development)</li>
+                    <li>Communication with main memory via the AXI4-Lite protocol</li>
+                  </ul>
+                </li>
+                <li><strong>Arithmetic Logic:</strong>
+                  <ul>
+                    <li>Carry-Lookahead Adder (CLA) for low-latency arithmetic operations</li>
+                    <li>8-cycle divider to reduce critical path delays and improve maximum clock frequency</li>
+                  </ul>
+                </li>
+              </ul>
+
+              <p>Our implementation is functionally correct, as verified by the Dhrystone benchmark. The design was synthesized using the Yosys toolchain and deployed on a Lattice ECP5 FPGA board.</p>
+
+              <p>Performance metrics and resource utilization of our design are reported in the table below:</p>
+
+              <div class="table-responsive" style="width: fit-content; margin: 0 auto;">
+                <table class="table table-bordered text-center">
+                  <thead class="table-light">
+                    <tr>
+                      <th>Metric</th>
+                      <th>Without caches</th>
+                      <th>With caches</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Max frequency</td><td>30.78 MHz</td><td>26.64 MHz</td></tr>
+                    <tr><td>LUT</td><td>30.9%</td><td>22.8%</td></tr>
+                    <tr><td>Flip-Flop</td><td>4.1%</td><td>3.9%</td></tr>
+                    <tr><td>Multiplier Blocks</td><td>3.2%</td><td>2.6%</td></tr>
+                    <tr><td>BRAM</td><td>1.0%</td><td>15.4%</td></tr>
+                    <tr><td>I/O Blocks</td><td>4.4%</td><td>4.4%</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="mt-2"><strong>Note:</strong> Since the <em>with-caches</em> version was later developed, several logic optimizations were made by us. As a result, its LUT and flip-flop usage is slightly more efficient compared to its predecessor.</p>
+
+              <div class="text-center mt-4">
+                <i>As part of the course policy, we are unable to publicly share our code. However, our full SystemVerilog implementation and other technical details can be made available upon request and will be considered on a case-by-case basis (typically shared in cases like recruitment processes or work unrelated to CIS 5710).</i>
+              </div>
+            </main>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>

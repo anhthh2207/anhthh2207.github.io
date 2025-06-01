@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurable Logic Block Design</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+
+<body style="margin-top:40px; margin-bottom:40px">
+    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+        <tbody>
+            <tr>
+                <td style="padding:0px">
+                    <div class="container" style="padding: 2.5%;">
+                        <header class="text-center mb-5">
+                            <h2><strong>Configurable Logic Block Design, Verification and Optimization</strong></h2>
+                        </header>
+
+                        <main>
+                            <p class="mt-4">In this project, I with my teammate, Linh Chu, designed a 16-bit Configurable Logic Block (CLB), a circuit that can model any 4-input combinational logic function. It is an essential block that provides flexibility for Field Programmable Gate Arrays (FPGAs). The circuit was developed in <strong>45nm Salicide 1.0V/1.8V 1P 11M</strong> technology supported in Cadence.</p>
+                            
+                            <p class="mb-1">Key Components of the Configurable Logic Block includes:</p>
+                            <ul class="mb-2">
+                                <li><a href="#lut">16:1 Lookup Table (LUT)</a></li>
+                                <li><a href="#sram">SRAM Array</a></li>
+                                <li><a href="#sipo">Serial In Parallel Out (SIPO) Register</a></li>
+                                <li><a href="#clk">Non-overlapping Clock Generator</a></li>
+                            </ul>
+
+                            <p class="mb-1">Finally, these components are integrated to form a comprehensive CLB design:</p>
+                            <ul>
+                                <li><a href="#clb">Configurable Logic Block</a></li>
+                            </ul>
+
+                            <section id="lut">
+                                <h3>16:1 Lookup Table (LUT)</h3>
+                                <p>The 16:1 LUT stores 2<sup>4</sup> output values and is configurable to implement any 4-input logic function using a MUX tree.</p>
+                                <div class="text-center">
+                                    <img src="../../assets/projects/clb/lut/mux21.png" width="400" alt="2:1 MUX">
+                                    <img src="../../assets/projects/clb/lut/mux21_sym.png" width="300" alt="2:1 MUX Symbol">
+                                    <p>2:1 Multiplexer design and symbol</p>
+                                    <img src="../../assets/projects/clb/lut/lut.png" width="400" alt="16-input LUT">
+                                    <img src="../../assets/projects/clb/lut/lut_symb.png" width="300" alt="LUT Symbol">
+                                    <p>16-input LUT design and symbol</p>
+                                </div>
+                            </section>
+
+                            <section id="sram">
+                                <h3>SRAM Array</h3>
+                                <p>Each 6T SRAM cell holds one output bit. We use control lines (WL, PC, W_EN) to read/write efficiently.</p>
+                                <div class="text-center">
+                                    <img src="../../assets/projects/clb/sram/sram_cell.png" width="400">
+                                    <img src="../../assets/projects/clb/sram/sram_symbol.png" width="300">
+                                    <p>6T SRAM cell and its symbol</p>
+                                    <img src="../../assets/projects/clb/sram/sram_cell_full.png" width="400">
+                                    <img src="../../assets/projects/clb/sram/sram_cell_full_symbol.png" width="300">
+                                    <p>SRAM with peripherals</p>
+                                    <img src="../../assets/projects/clb/sram/sram_array.png" width="800">
+                                    <p>16-bit SRAM array</p>
+                                </div>
+                            </section>
+
+                            <section id="sipo">
+                                <h3>Serial In Parallel Out (SIPO) Register</h3>
+                                <p>Converts serial data to parallel using 16 cascaded D Flip-Flops.</p>
+                                <!-- <div class="text-center", style="overflow-x: auto; white-space: nowrap;"> -->
+                                <div class="text-center">
+                                    <img src="../../assets/projects/clb/sipo/ff_noQ_circuit.png" width="550">
+                                    <img src="../../assets/projects/clb/sipo/ff_noQ_symbol.png" width="200">
+                                    <p>D Flip-Flop schematic and symbol</p>
+                                    <img src="../../assets/projects/clb/sipo/shift-register-w-arrow.gif" width="400">
+                                    <img src="../../assets/projects/clb/sipo/sipo_visualization.png" width="400">
+                                    <img src="../../assets/projects/clb/sipo/SIPO-1024x452.png" width="400">
+                                    <p>SIPO design and visualization <a href="https://www.build-electronic-circuits.com/shift-register/">[source]</a></p>
+                                </div>
+                            </section>
+
+                            <section id="clk">
+                                <h3>Non-overlapping Clock Generator</h3>
+                                <p>Generates CLK and complement CLK signals for flip-flops and control units.</p>
+                                <div class="text-center">
+                                    <img src="../../assets/projects/clb/clk/clock_circuit.png" width="550">
+                                    <img src="../../assets/projects/clb/clk/clock_symbol.png" width="200">
+                                    <p>Clock generator schematic and symbol</p>
+                                </div>
+                            </section>
+
+                            <section id="clb">
+                                <h3>Configurable Logic Block (CLB)</h3>
+                                <p>All modules are integrated into a unified CLB design supporting any 4-input combinational function.</p>
+                                <div class="text-center">
+                                    <img src="../../assets/projects/clb/CLB_full_design.png" width="800">
+                                    <p>Complete CLB schematic</p>
+                                </div>
+
+                                <h4 class="mt-4">Performance Metrics</h4>
+                                <table class="table table-bordered text-center w-50 mx-auto">
+                                    <thead class="table-light">
+                                        <tr><th>Metric</th><th>Value</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td>Max frequency</td><td>1 GHz</td></tr>
+                                        <tr><td>Loading Energy</td><td>3.212 × 10<sup>-3</sup> nJ</td></tr>
+                                        <tr><td>Active Energy</td><td>1.895 × 10<sup>-3</sup> nJ</td></tr>
+                                    </tbody>
+                                </table>
+                                <p><strong>*</strong> <em>Loading Energy</em>: Energy to load all bits into SRAM</p>
+                                <p><strong>*</strong> <em>Active Energy</em>: Energy to evaluate all 16 combinations at max frequency</p>
+
+                                <p class="mt-4">Full design procedure, sizing, testing, and optimization details are available upon request. Feel free to contact us if you have any questions 😀</p>
+                            </section>
+                        </main>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

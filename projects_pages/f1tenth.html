@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auto-driving Engines for F1/10</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+
+<body style="margin-top:40px; margin-bottom:40px">
+  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+    <tbody>
+      <tr>
+        <td style="padding:0px">
+          <div class="container" style="padding: 2.5%;">
+            <header class="text-center mb-5">
+              <h1><strong>Autonomous Driving Engines for F1/10 Racing Car</strong></h1>
+            </header>
+
+            <main>
+              <p class="fst-italic">
+                A big shoutout to my incredible teammates — Prakriti Prasad, Shreyas Muthusamy and Shubhodeep Aditya — who stood by me through an unforgettable semester. From countless sleepless nights of debugging to all the shared moments of frustration and small wins, I’ve learned so much from each of you.
+              </p>
+              <p>This is a compilation of the methods that we have developed for our F1/10 cars for the labs and races in the course <strong>ESE 6150 - Autonomous Racing Cars</strong> @ University of Pennsylvania.</p>
+              <p><strong><em>Please note that all animations in this article are displayed at 2x speed.</em></strong></p>
+
+              <h3>Table of Contents</h3>
+              <ul>
+                <li><a href="#reactive">1. Reactive Methods</a></li>
+                <li><a href="#planning">2. Planning-based Methods</a></li>
+              </ul>
+
+              <section id="reactive">
+                <h3>1. Reactive Methods</h3>
+                <p>Reactive methods utilize real-time sensor data to generate immediate responses without complex planning. They are sensitive to noise and often suboptimal in complex environments.</p>
+
+                <h5>Wall-following</h5>
+                <p>The PID wall-following algorithm keeps a fixed distance to the wall using a PID controller.</p>
+                <div class="text-center">
+                  <img src="../../assets/projects/f1tenth/wall-follow-levined-blocked.gif" alt="PID wall-following" width="400">
+                  <p class="fst-italic">PID wall-following</p>
+                </div>
+                <p>While simple, it requires extensive PID tuning and struggles with high speeds or sharp turns.</p>
+
+                <h5>Gap-following</h5>
+                <p>This method identifies the largest gaps in LIDAR scans and drives towards them.</p>
+                <div class="row text-center">
+                  <div class="col-md-6">
+                    <img src="../../assets/projects/f1tenth/gap-follow-levine-blocked.gif" alt="Gap-following no obstacle" class="img-fluid">
+                    <p class="fst-italic">Gap-following in obstacle-free map</p>
+                  </div>
+                  <div class="col-md-6">
+                    <img src="../../assets/projects/f1tenth/gap-follow-levine-obs.gif" alt="Gap-following with obstacle" class="img-fluid">
+                    <p class="fst-italic">Gap-following in obstacle map</p>
+                  </div>
+                </div>
+                <p>Gap-following achieves smoother navigation and better obstacle avoidance, but still lacks trajectory optimality.</p>
+              </section>
+
+              <section id="planning">
+                <h3>2. Planning-based Methods</h3>
+                <p>These methods improve performance by utilizing prior environmental knowledge or planned paths.</p>
+
+                <h5>Pure Pursuit</h5>
+                <p>Pure pursuit uses a look-ahead point on a pre-defined trajectory for control.</p>
+                <div class="row text-center">
+                  <div class="col-md-6">
+                    <img src="../../assets/projects/f1tenth/pure-pursuit-slam-levine.gif" alt="Pure pursuit SLAM" class="img-fluid">
+                    <p class="fst-italic">Pure pursuit with SLAM-estimated map</p>
+                  </div>
+                  <div class="col-md-6">
+                    <img src="../../assets/projects/f1tenth/pure-pursuit-fastest.gif" alt="Pure pursuit dynamic" class="img-fluid">
+                    <p class="fst-italic">Enhanced pure pursuit with trajectory smoothing</p>
+                  </div>
+                </div>
+                <p>Despite its simplicity, pure pursuit enables fast, stable, and effective path tracking, especially when paired with advanced speed control strategies.</p>
+              </section>
+
+              <div class="text-center mt-4">
+                <em>The project is currently in progress and will be updated in the near future.</em><br>
+                <em>If you have any questions or are interested in the project, please contact me for further information.</em>
+              </div>
+            </main>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>
