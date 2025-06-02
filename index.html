@@ -18,12 +18,12 @@
         overflow: hidden;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
         /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.00); */
-        transition: box-shadow 0.01s ease-out, transform 0.01s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: box-shadow 0.1s ease-out, transform 0.1s cubic-bezier(0.4, 0, 0.2, 1);
       }
 
       .project-box:hover {
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
-        transform: translateY(-1px);
+        transform: translateY(-8px);
       }
     </style>
         
@@ -170,6 +170,7 @@
                   Your browser does not support the video tag.
                 </video>
               </div>
+              <!-- <img src='assets/projects/clb/cover_pic.png' width="160" style="border-radius: 5px;"> -->
               <img src='assets/projects/clb/cover_pic.png' width="160">
             </div>
             <script type="text/javascript">
@@ -272,6 +273,47 @@
             <p></p>
             <p>
               Automatic Solar Tracker is a double-axis system that optimizes solar panel positioning using LDR sensors and a servo motor, developed on Tiva TM4C123GH6PM microcontroller.
+            </p>
+          </div>
+        </div>
+      </td>
+    </tr>
+
+
+
+    <!-- lc3 project  -->
+    <tr onmouseout="solar_stop()" onmouseover="solar_start()" bgcolor="#ffffff">
+      <td colspan="2" style="padding:4px 0;">
+        <div class="project-box">
+          <div style="width: 20%; padding: 16px;">
+            <div class="one">
+              <div class="two" id='solar_cover'>
+                <video width="100%" height="100%" muted autoplay loop>
+                  <source src="assets/projects/lc3/thumbnail.png">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <img src='assets/projects/lc3/thumbnail.png' width="160">
+            </div>
+            <script type="text/javascript">
+              function solar_start() {
+                document.getElementById('solar_cover').style.opacity = "1";
+              }
+              function bolt3d_stop() {
+                document.getElementById('solar_cover').style.opacity = "0";
+              }
+              bolt3d_stop();
+            </script>
+          </div>
+          <div style="width: 80%; padding: 16px;">
+            <a href="https://github.com/anhthh2207/auto-solar-tracker">
+              <span class="papertitle">LC3 Simulator</span>
+            </a>
+            <br>
+            <a href="https://github.com/anhthh2207/auto-solar-tracker">code</a>
+            <p></p>
+            <p>
+              This project implements the LC-3 (Little Computer 3) architecture in C. The implementation is verified and demonstrated using games such as 2048, Hangman, and Rogue.
             </p>
           </div>
         </div>
