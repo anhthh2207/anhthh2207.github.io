@@ -23,7 +23,7 @@
 
       .project-box:hover {
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
-        transform: translateY(-1px) scale(1.01);
+        transform: translateY(-1px) scale(1.02);
       }
     </style>
         
@@ -150,7 +150,8 @@
             <a href="https://github.com/ESE-5390-Fall-2024/project-group-09">code</a>
             <p></p>
             <p>
-              We investigated various patterns and intensities of pruning; developed custom layer leveraging CSR format for efficient storage and inference of deep neural network.
+              <!-- We investigated various patterns and intensities of pruning; developed custom layer leveraging CSR format for efficient storage and inference of deep neural network. -->
+              This project investigated different pruning patterns and sparsity levels, and developed a custom linear layer leveraging the Compressed Sparse Row (CSR) format to improve memory efficiency and accelerate neural network inference.
             </p>
           </div>
         </div>
@@ -191,7 +192,8 @@
             <a href="projects_pages/clb.html">project page</a>
             <p></p>
             <p>
-              This project focuses on optimizing Configurable Logic Blocks (CLB) design by addressing timing hazards, and power-performance trade-offs to minimize the Figure of Merit.
+              <!-- This project focuses on optimizing Configurable Logic Blocks (CLB) design by addressing timing hazards, and power-performance trade-offs to minimize the Figure of Merit. -->
+              This project presents the design and verification of a 16-bit Configurable Logic Block (CLB) implemented using Cadence 45nm Salicide 1.0V/1.8V 1P 11M technology. Our design integrates key modules, including a 16:1 LUT, SRAM, SIPO register, and clock generator, carefully tuned to resolve timing hazards and balance power and performance.
             </p>
           </div>
         </div>
@@ -240,6 +242,50 @@
     </tr>
 
 
+
+
+    <!-- lc3 project  -->
+    <tr onmouseout="lc3_stop()" onmouseover="lc3_start()" bgcolor="#ffffff">
+      <td colspan="2" style="padding:4px 0;">
+        <div class="project-box">
+          <div style="width: 20%; padding: 16px;">
+            <div class="one">
+              <div class="two" id='lc3_cover'>
+                <video width="100%" height="100%" muted autoplay loop>
+                  <source src="assets/projects/lc3/thumbnail.png">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <img src='assets/projects/lc3/thumbnail.png' width="160">
+            </div>
+            <script type="text/javascript">
+              function lc3_start() {
+                document.getElementById('lc3_cover').style.opacity = "1";
+              }
+              function lc3_stop() {
+                document.getElementById('lc3_cover').style.opacity = "0";
+              }
+              lc3_stop();
+            </script>
+          </div>
+          <div style="width: 80%; padding: 16px;">
+            <a href="https://github.com/anhthh2207/lc3-virtual-machine">
+              <span class="papertitle">LC3 Simulator</span>
+            </a>
+            <br>
+            <a href="https://github.com/anhthh2207/lc3-virtual-machine">code</a>
+            <p></p>
+            <p>
+              <!-- This project implements the LC-3 (Little Computer 3) architecture in C. The implementation is verified and demonstrated using games such as 2048, Hangman, and Rogue. -->
+              This project implemented the LC-3 (Little Computer 3) architecture in C. We verified and demonstrated our design using games written in LC-3 Assembly, including 2048, Hangman, and Rogue.
+            </p>
+          </div>
+        </div>
+      </td>
+    </tr>
+
+
+
     <!-- auto solar tracker project  -->
     <tr onmouseout="solar_stop()" onmouseover="solar_start()" bgcolor="#ffffff">
       <td colspan="2" style="padding:4px 0;">
@@ -273,47 +319,6 @@
             <p></p>
             <p>
               Automatic Solar Tracker is a double-axis system that optimizes solar panel positioning using LDR sensors and a servo motor, developed on Tiva TM4C123GH6PM microcontroller.
-            </p>
-          </div>
-        </div>
-      </td>
-    </tr>
-
-
-
-    <!-- lc3 project  -->
-    <tr onmouseout="lc3_stop()" onmouseover="lc3_start()" bgcolor="#ffffff">
-      <td colspan="2" style="padding:4px 0;">
-        <div class="project-box">
-          <div style="width: 20%; padding: 16px;">
-            <div class="one">
-              <div class="two" id='lc3_cover'>
-                <video width="100%" height="100%" muted autoplay loop>
-                  <source src="assets/projects/lc3/thumbnail.png">
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-              <img src='assets/projects/lc3/thumbnail.png' width="160">
-            </div>
-            <script type="text/javascript">
-              function lc3_start() {
-                document.getElementById('lc3_cover').style.opacity = "1";
-              }
-              function lc3_stop() {
-                document.getElementById('lc3_cover').style.opacity = "0";
-              }
-              lc3_stop();
-            </script>
-          </div>
-          <div style="width: 80%; padding: 16px;">
-            <a href="https://github.com/anhthh2207/auto-solar-tracker">
-              <span class="papertitle">LC3 Simulator</span>
-            </a>
-            <br>
-            <a href="https://github.com/anhthh2207/auto-solar-tracker">code</a>
-            <p></p>
-            <p>
-              This project implements the LC-3 (Little Computer 3) architecture in C. The implementation is verified and demonstrated using games such as 2048, Hangman, and Rogue.
             </p>
           </div>
         </div>
