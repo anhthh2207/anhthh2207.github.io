@@ -27,21 +27,37 @@
         transform: translateY(-1px) scale(1.02);
       }
 
-      /* html {
+      /* nav bar config */
+      nav div {
+        line-height: 24px;
+      }
+
+      #about,
+      #projects,
+      #contact {
+        scroll-margin-top: 30px;
+      }
+
+      html {
         scroll-behavior: smooth;
-      } */
+      }
     </style>
         
   </head>
 
-  <body>
+  <body style="margin-top:0px">
     <!-- nav bar -->
     <nav style="position: sticky; 
-                /* top: 0; background-color: white;  */
-                top: 0; background-color: rgba(255, 255, 255, 0.95); 
+                top: 0; 
+                background-color: rgba(255, 255, 255, 0.95); 
                 z-index: 1000; 
                 box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-      <div style="max-width: 800px; margin: 0 auto; padding: 10px 20px; display: flex; justify-content: flex-end; align-items: center;">
+      <div style="max-width: 850px;  /* FIXED width */
+                  margin: 0 auto; 
+                  padding: 10px 0px 10px 0px;
+                  display: flex; 
+                  justify-content: flex-end; 
+                  align-items: center;">
         <a href="#about" style="margin: 0 10px; text-decoration: none; color: #333;">about</a>
         <a href="#projects" style="margin: 0 10px; text-decoration: none; color: #333;">projects</a>
         <a href="#contact" style="margin: 0 10px; text-decoration: none; color: #333;">contact</a>
@@ -59,7 +75,7 @@
     </nav>
 
 
-    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+    <table style="width:100%;max-width:850px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
       <tr style="padding:0px">
         <td style="padding:0px">
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
@@ -427,26 +443,6 @@
         const docHeight = document.documentElement.scrollHeight - window.innerHeight;
         const scrollPercent = (scrollTop / docHeight) * 100;
         document.getElementById('scroll-progress').style.width = scrollPercent + '%';
-      });
-
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          const targetId = this.getAttribute('href');
-          const targetElement = document.querySelector(targetId);
-
-          if (targetElement) {
-            e.preventDefault();
-            
-            const offset = 25; // target to point a bit above the section header, adjust this if needed
-            const elementPosition = targetElement.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.scrollY - offset;
-
-            window.scrollTo({
-              top: offsetPosition,
-              behavior: 'smooth'
-            });
-          }
-        });
       });
     </script>
 

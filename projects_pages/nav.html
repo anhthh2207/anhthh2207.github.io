@@ -1,0 +1,59 @@
+<!-- nav.html for project pages-->
+<nav style="position: sticky;
+            top: 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+  <div style="
+    width: 850px;
+    margin: 0;                /* no auto-centering, so it stays left-aligned */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: flex-start; /* or flex-end if you still want the links on the right side of that 850px box */
+    align-items: center;
+    ">
+    <a href="#about"    style="margin: 0 10px; text-decoration: none; color: #333;">about</a>
+    <a href="#projects" style="margin: 0 10px; text-decoration: none; color: #333;">projects</a>
+    <a href="#contact"  style="margin: 0 10px; text-decoration: none; color: #333;">contact</a>
+  </div>
+
+  <div id="scroll-progress" style="
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background-color: #007bff;
+    transition: width 0.1s ease-out;
+  "></div>
+</nav>
+
+<script>
+  // Update the scroll bar width as the user scrolls
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    document.getElementById('scroll-progress').style.width = scrollPercent + '%';
+  });
+
+  // Smooth‐scroll to section (with 25px offset from top)
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+
+      if (targetElement) {
+        e.preventDefault();
+        const offset = 25;
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+</script>

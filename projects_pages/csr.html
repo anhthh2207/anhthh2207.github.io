@@ -6,10 +6,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fast, Compact and Efficient DNN via Pruning and Sparse Matrix Compression</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+  <style>
+      nav div {
+      line-height: 24px;
+      }
+  </style>
 </head>
 
-<body style="margin-top:40px; margin-bottom:40px">
-  <table style="width:100%;max-width:950px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+<body style="margin-top:0px; margin-bottom:40px">
+  <nav style="position: sticky; 
+                top: 0; 
+                background-color: rgba(255, 255, 255, 0.95); 
+                z-index: 1000; 
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+  <div style="
+      width: 850px;            /* FIXED width */
+      margin: 0 auto;         /* center it in the viewport */
+      padding: 10px 0px 10px 12px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      ">
+      <a href="../index.html#about"
+          style="
+              margin-right: auto;
+              margin-left: 10px;
+              text-decoration: none;
+              color: #333;
+              font-size: 20px;
+              font-weight: normal;
+          ">
+          Anh Tran
+      </a>
+
+      <a href="../index.html#about"    style="margin: 0 10px; text-decoration: none; color: #333;">about</a>
+      <a href="../index.html#projects" style="margin: 0 10px; text-decoration: none; color: #333;">projects</a>
+      <a href="../index.html#contact"  style="margin: 0 10px; text-decoration: none; color: #333;">contact</a>
+  </div>
+
+  <div id="scroll-progress" style="
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      width: 0%;
+      background-color: #007bff;
+      transition: width 0.1s ease-out;
+      "></div>
+  </nav>
+
+  <table style="width:100%;max-width:850px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
     <tbody>
       <tr>
         <td style="padding:0px">
@@ -87,6 +134,16 @@
       </tr>
     </tbody>
   </table>
+
+  <script>
+    // dynamically updates the width of the scroll indicator bar (#scroll-progress) as the user scrolls through the page. 
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / docHeight) * 100;
+        document.getElementById('scroll-progress').style.width = scrollPercent + '%';
+    });
+  </script>
 </body>
 
 </html>
