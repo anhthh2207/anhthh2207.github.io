@@ -83,16 +83,16 @@
     <!-- riscv project -->
     <tr onmouseout="riscv_stop()" onmouseover="riscv_start()" bgcolor="#ffffff">
       <td colspan="2" style="padding:4px 0;">
-        <div class="project-box">
-          <div style="width: 20%; padding: 16px;">
-            <div class="one">
-              <div class="two" id='riscv_cover'>
-                <video width="100%" height="100%" muted autoplay loop>
+        <div class="project-box" style="display: flex; flex-wrap: wrap; align-items:center;">
+          <div style="flex: 0 0 160px; padding: 16px;">
+            <div class="one" style="position: relative;">
+              <div class="two" id='riscv_cover' style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.2s;">
+                <video width="100%" height="100%" muted autoplay loop style="object-fit: cover;">
                   <source src="assets/projects/riscv_core/thumbnail.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
               </div>
-              <img src='assets/projects/riscv_core/cover_pic.png' width="160">
+              <img src='assets/projects/riscv_core/cover_pic.png' width="160" style="display: block;">
             </div>
             <script type="text/javascript">
               function riscv_start() {
@@ -105,7 +105,8 @@
               riscv_stop();
             </script>
           </div>
-          <div style="width: 80%; padding: 16px;">
+
+          <div style="flex: 1; padding: 16px;">
             <a href="projects_pages/riscv.html">
               <span class="papertitle">Pipelined RISCV Processor</span>
             </a>
@@ -113,7 +114,7 @@
             <a href="projects_pages/riscv.html">project page</a> /
             <a href="https://github.com/anhthh2207/cis5710-homework.git">code</a>
             <p></p>
-            <p>
+            <p style="margin-top: 8px;">
               A custom 32-bit RISC-V core in SystemVerilog with a five-stage fully pipelined datapath, including full forwarding
               and hazard control. It features I$ and D$ that interface with main memory via the AXIL protocol, along with
               low-latency operators such as a Carry-Lookahead Adder and an 8-cycle divider.
@@ -124,19 +125,21 @@
     </tr>
 
 
+
     <!-- csr project  -->
-     <tr onmouseout="csr_stop()" onmouseover="csr_start()" bgcolor="#ffffff">
+    <tr onmouseout="csr_stop()" onmouseover="csr_start()" bgcolor="#ffffff">
       <td colspan="2" style="padding:4px 0;">
-        <div class="project-box">
-          <div style="width: 20%; padding: 16px;">
-            <div class="one">
-              <div class="two" id='csr_cover'>
-                <video width="100%" muted autoplay loop>
+        <div class="project-box" style="display: flex; flex-wrap: wrap; align-items:center;">
+          <!-- Image / Video -->
+          <div style="flex: 0 0 160px; padding: 16px;">
+            <div class="one" style="position: relative;">
+              <div class="two" id='csr_cover' style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.2s;">
+                <video width="100%" height="100%" muted autoplay loop style="object-fit: cover;">
                   <source src="assets/projects/csr/cover_pic.png">
                   Your browser does not support the video tag.
                 </video>
               </div>
-              <img src='assets/projects/csr/cover_pic.png' width="160">
+              <img src='assets/projects/csr/cover_pic.png' width="160" style="display: block;">
             </div>
             <script type="text/javascript">
               function csr_start() {
@@ -148,7 +151,9 @@
               csr_stop();
             </script>
           </div>
-          <div style="width: 80%; padding: 16px;">
+
+          <!-- Text -->
+          <div style="flex: 1; padding: 16px;">
             <a href="projects_pages/csr.html">
               <span class="papertitle">Efficient DNN via Pruning & Sparse Matrix Compression</span>
             </a>
@@ -156,7 +161,7 @@
             <a href="projects_pages/csr.html">project page</a> /
             <a href="https://github.com/ESE-5390-Fall-2024/project-group-09">code</a>
             <p></p>
-            <p>
+            <p style="margin-top: 8px;">
               This project investigated different pruning patterns and sparsity levels, and developed a custom linear layer leveraging the Compressed Sparse Row (CSR) format to improve memory efficiency and accelerate neural network inference.
             </p>
           </div>
@@ -165,20 +170,21 @@
     </tr>
 
 
+
     <!-- clb project  -->
     <tr onmouseout="clb_stop()" onmouseover="clb_start()" bgcolor="#ffffff">
       <td colspan="2" style="padding:4px 0;">
-        <div class="project-box">
-          <div style="width: 20%; padding: 16px;">
-            <div class="one">
-              <div class="two" id='clb_cover'>
-                <video width="100%" height="100%" muted autoplay loop>
+        <div class="project-box" style="display: flex; flex-wrap: wrap; align-items:center;">
+          <div style="flex: 0 0 160px; padding: 16px;">
+            <div class="one" style="position: relative;">
+              <div class="two" id='clb_cover' style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.2s;">
+                <video width="100%" height="100%" muted autoplay loop style="object-fit: cover;">
                   <source src="assets/projects/clb/cover_pic.png">
                   Your browser does not support the video tag.
                 </video>
               </div>
               <!-- <img src='assets/projects/clb/cover_pic.png' width="160" style="border-radius: 5px;"> -->
-              <img src='assets/projects/clb/cover_pic.png' width="160">
+              <img src='assets/projects/clb/cover_pic.png' width="160" style="display: block;">
             </div>
             <script type="text/javascript">
               function clb_start() {
@@ -190,14 +196,14 @@
               clb_stop();
             </script>
           </div>
-          <div style="width: 80%; padding: 16px;">
+          <div style="flex: 1; padding: 16px;">
             <a href="projects_pages/clb.html">
               <span class="papertitle">Configurable Logic Block Design, Verification and Optimization</span>
             </a>
             <br>
             <a href="projects_pages/clb.html">project page</a>
             <p></p>
-            <p>
+            <p style="margin-top: 8px;">
               This project presents the design and verification of a 16-bit Configurable Logic Block (CLB) implemented using Cadence 45nm Salicide 1.0V/1.8V 1P 11M technology. Our design integrates key modules, including a 16:1 LUT, SRAM, SIPO register, and clock generator, carefully tuned to resolve timing hazards and balance power and performance.
             </p>
           </div>
@@ -209,16 +215,16 @@
     <!-- f1tenth project  -->
     <tr onmouseout="f1tenth_stop()" onmouseover="f1tenth_start()" bgcolor="#ffffff">
       <td colspan="2" style="padding:4px 0;">
-        <div class="project-box">
-          <div style="width: 20%; padding: 16px;">
-            <div class="one">
-              <div class="two" id='f1tenth_cover'>
-                <video width="100%" height="100%" muted autoplay loop>
+        <div class="project-box" style="display: flex; flex-wrap: wrap; align-items:center;">
+          <div style="flex: 0 0 160px; padding: 16px;">
+            <div class="one" style="position: relative;">
+              <div class="two" id='f1tenth_cover' style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.2s;">
+                <video width="100%" height="100%" muted autoplay loop style="object-fit: cover;">
                   <source src="assets/projects/f1tenth/thumbnail.mp4">
                   Your browser does not support the video tag.
                 </video>
               </div>
-              <img src='assets/projects/f1tenth/thumbnail.png' width="160">
+              <img src='assets/projects/f1tenth/thumbnail.png' width="160" style="display: block;">
             </div>
             <script type="text/javascript">
               function f1tenth_start() {
@@ -230,7 +236,8 @@
               f1tenth_stop();
             </script>
           </div>
-          <div style="width: 80%; padding: 16px;">
+
+          <div style="flex: 1; padding: 16px;">
             <a href="projects_pages/f1tenth.html">
               <span class="papertitle">Auto-driving Engines for F1/10</span>
             </a>
@@ -238,7 +245,7 @@
             <a href="projects_pages/f1tenth.html">project page</a> /
             <a href="https://github.com/anhthh2207/cis5710-homework.git">code</a>
             <p></p>
-            <p>
+            <p style="margin-top: 8px;">
               We designed autonomous driving systems for F1/10 racing cars, featuring SLAM, motion planning, optimal control, deep learning-based perception, and integration across simulation and hardware platforms.
             </p>
           </div>
@@ -249,19 +256,20 @@
 
 
 
+
     <!-- lc3 project  -->
     <tr onmouseout="lc3_stop()" onmouseover="lc3_start()" bgcolor="#ffffff">
       <td colspan="2" style="padding:4px 0;">
-        <div class="project-box">
-          <div style="width: 20%; padding: 16px;">
-            <div class="one">
-              <div class="two" id='lc3_cover'>
-                <video width="100%" height="100%" muted autoplay loop>
+        <div class="project-box" style="display: flex; flex-wrap: wrap; align-items:center;">
+          <div style="flex: 0 0 160px; padding: 16px;">
+            <div class="one" style="position: relative;">
+              <div class="two" id='lc3_cover' style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.2s;">
+                <video width="100%" height="100%" muted autoplay loop style="object-fit: cover;">
                   <source src="assets/projects/lc3/thumbnail.png">
                   Your browser does not support the video tag.
                 </video>
               </div>
-              <img src='assets/projects/lc3/thumbnail.png' width="160">
+              <img src='assets/projects/lc3/thumbnail.png' width="160" style="display: block;">
             </div>
             <script type="text/javascript">
               function lc3_start() {
@@ -273,14 +281,15 @@
               lc3_stop();
             </script>
           </div>
-          <div style="width: 80%; padding: 16px;">
+
+          <div style="flex: 1; padding: 16px;">
             <a href="https://github.com/anhthh2207/lc3-virtual-machine">
               <span class="papertitle">LC3 Simulator</span>
             </a>
             <br>
             <a href="https://github.com/anhthh2207/lc3-virtual-machine">code</a>
             <p></p>
-            <p>
+            <p style="margin-top: 8px;">
               This project implemented the LC-3 (Little Computer 3) architecture in C. We verified and demonstrated our design using games written in LC-3 Assembly, including 2048, Hangman, and Rogue.
             </p>
           </div>
@@ -290,19 +299,21 @@
 
 
 
+
     <!-- auto solar tracker project  -->
     <tr onmouseout="solar_stop()" onmouseover="solar_start()" bgcolor="#ffffff">
       <td colspan="2" style="padding:4px 0;">
-        <div class="project-box">
-          <div style="width: 20%; padding: 16px;">
-            <div class="one">
-              <div class="two" id='solar_cover'>
-                <video width="100%" height="100%" muted autoplay loop>
+        <div class="project-box" style="display: flex; flex-wrap: wrap; align-items:center;">
+          <!-- Image / Video -->
+          <div style="flex: 0 0 160px; padding: 16px;">
+            <div class="one" style="position: relative;">
+              <div class="two" id='solar_cover' style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.2s;">
+                <video width="100%" height="100%" muted autoplay loop style="object-fit: cover;">
                   <source src="assets/projects/auto_solartracker/thumbnail.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
               </div>
-              <img src='assets/projects/auto_solartracker/thumbnail.png' width="160">
+              <img src='assets/projects/auto_solartracker/thumbnail.png' width="160" style="display: block;">
             </div>
             <script type="text/javascript">
               function solar_start() {
@@ -314,20 +325,23 @@
               solar_stop();
             </script>
           </div>
-          <div style="width: 80%; padding: 16px;">
+
+          <!-- Text -->
+          <div style="flex: 1; padding: 16px;">
             <a href="https://github.com/anhthh2207/auto-solar-tracker">
               <span class="papertitle">Automatic Solar Tracker</span>
             </a>
             <br>
             <a href="https://github.com/anhthh2207/auto-solar-tracker">code</a>
             <p></p>
-            <p>
+            <p style="margin-top: 8px;">
               Automatic Solar Tracker is a dual-axis system designed to maximize solar energy absorption by adjusting panel orientation based on input from Light Dependent Resistor (LDR) sensors. The system is controlled by servo motors powered by the Tiva TM4C123GH6PM microcontroller.
             </p>
           </div>
         </div>
       </td>
     </tr>
+
 
 
 
