@@ -26,16 +26,20 @@
         transform: translateY(-1px) scale(1.02);
       }
 
-      html {
+      /* html {
         scroll-behavior: smooth;
-      }
+      } */
     </style>
         
   </head>
 
   <body>
     <!-- nav bar -->
-    <nav style="position: sticky; top: 0; background-color: white; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <nav style="position: sticky; 
+                /* top: 0; background-color: white;  */
+                top: 0; background-color: rgba(255, 255, 255, 0.95); 
+                z-index: 1000; 
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
       <div style="max-width: 800px; margin: 0 auto; padding: 10px 20px; display: flex; justify-content: flex-end; align-items: center;">
         <a href="#about" style="margin: 0 10px; text-decoration: none; color: #333;">about</a>
         <a href="#projects" style="margin: 0 10px; text-decoration: none; color: #333;">projects</a>
@@ -66,9 +70,6 @@
                   Anh Tran
                 </p>
                 <p>
-    <!-- Hi! I'm <strong>Anh Tran</strong>, an MSE student in Electrical Engineering at the University of Pennsylvania 
-    <img src="assets/icons/upenn_logo.png" alt="UPenn logo" style="width:0.84em; height:0.95em; vertical-align:text-bottom; margin-bottom:+0.17em;">.<br>
-    I have a deep passion for <strong>computer architecture, digital design and AI</strong>, exploring their intersections to drive innovation and efficiency. -->
     I am currently an Electrical Engineering Master's student at the <a href="https://www.seas.upenn.edu/">University of Pennsylvania</a> <img src="assets/icons/upenn_logo.png" alt="UPenn logo" style="width:0.84em; height:0.95em; vertical-align:text-bottom; margin-bottom:+0.17em;">. 
     I previously completed my undergraduate studies in Electrical and Computer Engineering at <a href="https://cecs.vinuni.edu.vn/">VinUniversity</a>
     <img src="assets/icons/vinuni_logo.png" alt="VinUni logo" style="width:0.91em; height:0.95em; vertical-align:text-bottom; margin-bottom:+0.17em;">. 
@@ -421,13 +422,33 @@
     </table>
 
     
-    <!-- dynamically updates the width of the scroll indicator bar (#scroll-progress) as the user scrolls through the page. -->
     <script>
+      // dynamically updates the width of the scroll indicator bar (#scroll-progress) as the user scrolls through the page. 
       window.addEventListener('scroll', () => {
         const scrollTop = window.scrollY;
         const docHeight = document.documentElement.scrollHeight - window.innerHeight;
         const scrollPercent = (scrollTop / docHeight) * 100;
         document.getElementById('scroll-progress').style.width = scrollPercent + '%';
+      });
+
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+
+          if (targetElement) {
+            e.preventDefault();
+            
+            const offset = 25; // target to point a bit above the section header, adjust this if needed
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.scrollY - offset;
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
+        });
       });
     </script>
 
