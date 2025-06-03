@@ -38,20 +38,28 @@
                             <section id="lut">
                                 <h3>16:1 Lookup Table (LUT)</h3>
                                 <p>The first component in our design is the 16:1 LUT. It accepts 4 binary inputs and stores 16 output values, corresponding to 2<sup>4</sup> possible input combinations. When the LUT receives 4 input values, these values are used as an address to look up the corresponding output from the pre-stored array. The beauty of LUT is its configurability; by changing the pre-stored array, the LUT can implement any logical function.</p>
-                                <div class="text-center">
-                                    <img src="../../assets/projects/clb/lut/mux21.png" width="400" alt="2:1 MUX">
-                                    <img src="../../assets/projects/clb/lut/mux21_sym.png" width="300" alt="2:1 MUX Symbol">
-                                    <p>2:1 Multiplexer design and symbol</p>
+                                <div class="text-center" style="display: flex; justify-content: center; gap: 4px; flex-wrap: wrap;">
+                                    <figure>
+                                        <img src="../../assets/projects/clb/lut/mux21.png" width="400" alt="2:1 MUX">
+                                        <figcaption style="margin-top: 8px;">2:1 Multiplexer design</figcaption>
+                                    </figure>
+                                    <figure>
+                                        <img src="../../assets/projects/clb/lut/mux21_sym.png" width="300" alt="2:1 MUX Symbol">
+                                        <figcaption style="margin-top: 8px;">2:1 Multiplexer symbol</figcaption>
+                                    </figure>
                                 </div>
-                                
                                 <p>
                                 We begin with the design of a 2:1 MUX (similar to LUT, it selects one of two outputs based on a select line). A LUT can be constructed by connecting 15 MUXes in a tree structure, as shown below. Two CMOS logic inverters at the output function as serve as a buffer, restoring the voltage after pass-transistor logic degradation in the MUXes.
                                 </p>
-
-                                <div class="text-center">
-                                    <img src="../../assets/projects/clb/lut/lut.png" width="400" alt="16-input LUT">
-                                    <img src="../../assets/projects/clb/lut/lut_symb.png" width="300" alt="LUT Symbol">
-                                    <p>16-input LUT design and symbol</p>
+                                <div class="text-center" style="display: flex; justify-content: center; gap: 4px; flex-wrap: wrap;">
+                                    <figure>
+                                        <img src="../../assets/projects/clb/lut/lut.png" width="400" alt="16-input LUT">
+                                        <figcaption style="margin-top: 8px;">16-input LUT design</figcaption>
+                                    </figure>
+                                    <figure>
+                                        <img src="../../assets/projects/clb/lut/lut_symb.png" width="300" alt="LUT Symbol">
+                                        <figcaption style="margin-top: 8px;">LUT Symbol</figcaption>
+                                    </figure>
                                 </div>
                             </section>
 
@@ -62,10 +70,15 @@
                                     <a href="https://youtu.be/kU2SsUUsftA?si=ze4-9zVNDbIH421l" target="_blank">tutorial</a> 
                                     about how an SRAM cell works.
                                 </p>
-                                <div class="text-center">
-                                    <img src="../../assets/projects/clb/sram/sram_cell.png" width="400">
-                                    <img src="../../assets/projects/clb/sram/sram_symbol.png" width="300">
-                                    <p>6T SRAM cell and its symbol</p>
+                                <div class="text-center" style="display: flex; justify-content: center; gap: 4px; flex-wrap: wrap;">
+                                    <figure>
+                                        <img src="../../assets/projects/clb/sram/sram_cell.png" width="400" alt="6T SRAM cell">
+                                        <figcaption style="margin-top: 8px;">6T SRAM cell</figcaption>
+                                    </figure>
+                                    <figure>
+                                        <img src="../../assets/projects/clb/sram/sram_symbol.png" width="300" alt="SRAM cell symbol">
+                                        <figcaption style="margin-top: 8px;">SRAM cell symbol</figcaption>
+                                    </figure>
                                 </div>
                                 <p>
                                     However, to control the memory cell more robustly and facilitate integration with other components, we have designed additional peripherals and ports:
@@ -78,10 +91,15 @@
                                     <li><strong>OUT</strong>: Read output</li>
                                 </ul>
 
-                                <div class="text-center">
-                                    <img src="../../assets/projects/clb/sram/sram_cell_full.png" width="400">
-                                    <img src="../../assets/projects/clb/sram/sram_cell_full_symbol.png" width="300">
-                                    <p>SRAM with peripherals</p>
+                                <div class="text-center" style="display: flex; justify-content: center; gap: 4px; flex-wrap: wrap;">
+                                    <figure>
+                                        <img src="../../assets/projects/clb/sram/sram_cell_full.png" width="400" alt="SRAM with peripherals">
+                                        <figcaption style="margin-top: 8px;">6T SRAM with peripherals</figcaption>
+                                    </figure>
+                                    <figure>
+                                        <img src="../../assets/projects/clb/sram/sram_cell_full_symbol.png" width="300" alt="SRAM cell symbol">
+                                        <figcaption style="margin-top: 8px;">SRAM symbol</figcaption>
+                                    </figure>
                                 </div>
                                 
                                 <p>
@@ -89,7 +107,7 @@
                                 </p>
 
                                 <div class="text-center">
-                                    <img src="../../assets/projects/clb/sram/sram_array.png" width="750">
+                                    <img src="../../assets/projects/clb/sram/sram_array.png" width="740">
                                     <p>16-bit SRAM array</p>
                                 </div>
                             </section>
@@ -97,10 +115,15 @@
                             <section id="sipo">
                                 <h3>Serial In Parallel Out (SIPO) Register</h3>
                                 <p>To load data into the SRAM array, we use a SIPO register. It converts serial data into parallel data by receiving one bit at a time and then outputting the entire set of taken bits simultaneously as a parallel word.</p>
-                                <div class="text-center">
-                                    <img src="../../assets/projects/clb/sipo/ff_noQ_circuit.png" width="550">
-                                    <img src="../../assets/projects/clb/sipo/ff_noQ_symbol.png" width="200">
-                                    <p>D Flip-Flop schematic and symbol</p>
+                                <div class="text-center" style="display: flex; justify-content: center; gap: 4px; flex-wrap: wrap;">
+                                    <figure>
+                                        <img src="../../assets/projects/clb/sipo/ff_noQ_circuit.png" width="550" alt="D Flip-Flop schematic">
+                                        <figcaption style="margin-top: 8px;">D Flip-Flop schematic</figcaption>
+                                    </figure>
+                                    <figure>
+                                        <img src="../../assets/projects/clb/sipo/ff_noQ_symbol.png" width="200" alt="D Flip-Flop symbol">
+                                        <figcaption style="margin-top: 8px;">D Flip-Flop symbol</figcaption>
+                                    </figure>
                                 </div>
                                 <p>
                                     A SIPO register is constructed by cascading 16 D flip-flops, as demonstrated below.
@@ -116,10 +139,15 @@
                             <section id="clk">
                                 <h3>Non-overlapping Clock Generator</h3>
                                 <p>As can be observed, several components, particularly the flip-flops, utilize both CLK and CLK as inputs. Consequently, we developed a module to generate two complementary clock signals from a single source.</p>
-                                <div class="text-center">
-                                    <img src="../../assets/projects/clb/clk/clock_circuit.png" width="550">
-                                    <img src="../../assets/projects/clb/clk/clock_symbol.png" width="200">
-                                    <p>Clock generator schematic and symbol</p>
+                                 <div class="text-center" style="display: flex; justify-content: center; gap: 4px; flex-wrap: wrap;">
+                                    <figure>
+                                        <img src="../../assets/projects/clb/clk/clock_circuit.png" width="550" alt="Clock generator schematic">
+                                        <figcaption style="margin-top: 8px;">Clock generator schematic</figcaption>
+                                    </figure>
+                                    <figure>
+                                        <img src="../../assets/projects/clb/clk/clock_symbol.png" width="200" alt="Clock generator symbol">
+                                        <figcaption style="margin-top: 8px;">Clock generator symbol</figcaption>
+                                    </figure>
                                 </div>
                             </section>
 
@@ -127,7 +155,7 @@
                                 <h3>Configurable Logic Block (CLB)</h3>
                                 <p>All modules are integrated into a unified CLB design supporting any 4-input combinational function.</p>
                                 <div class="text-center">
-                                    <img src="../../assets/projects/clb/CLB_full_design.png" width="750">
+                                    <img src="../../assets/projects/clb/CLB_full_design.png" width="740">
                                     <p>Complete CLB schematic</p>
                                 </div>
 
