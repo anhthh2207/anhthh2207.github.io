@@ -1,246 +1,318 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Configurable Logic Block Design</title>
-    <!-- <link rel="stylesheet" type="text/css" href="stylesheet.css"> -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Configurable Logic Block Design</title>
+  <!-- Bootstrap CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+  >
 
-    <style>
-        nav div {
-        line-height: 24px;
-        }
-    </style>
+  <style>
+    /* remove default body padding/margins so the navbar truly stretches edge‐to‐edge */
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* enforce a max‐width of 850px for the “page‐wrapper” and center it */
+    .page-wrapper {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 2.5% 1rem; /* vertical spacing + a bit of horizontal padding */
+    }
+
+    /* responsive images */
+    .page-wrapper img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ensure text wraps normally */
+    .page-wrapper p,
+    .page-wrapper li {
+      white-space: normal;
+      overflow-wrap: break-word;
+    }
+
+    /* nav “inner” container also limited to 850px */
+    nav > .nav-inner {
+      max-width: 850px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 10px 0px 10px 18px;
+    }
+
+    /* scroll‐progress bar at bottom of navbar */
+    #scroll-progress {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      width: 0%;
+      background-color: #007bff;
+      transition: width 0.1s ease-out;
+    }
+
+    /* simple link styling in nav */
+    .nav-inner a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #333;
+      font-size: 1rem;
+    }
+    .nav-inner .brand {
+      margin-right: auto;
+      margin-left: 0;
+      font-size: 1.25rem;
+      font-weight: 500;
+    }
+
+    nav div {
+      line-height: 24px;
+    }
+  </style>
 </head>
 
-<body style="margin-top:0px; margin-bottom:40px">
-    <nav style="position: sticky; 
-                top: 0; 
-                background-color: rgba(255, 255, 255, 0.95); 
-                z-index: 1000; 
-                box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-    <div style="
-        max-width: 850px;        
-        margin: 0 auto;         /* center it in the viewport */
-        padding: 10px 0px 10px 12px;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        ">
-        <a href="../index.html#about"
-            style="
-                margin-right: auto;
-                margin-left: 10px;
-                text-decoration: none;
-                color: #333;
-                font-size: 20px;
-                font-weight: normal;
-            ">
-            Anh Tran
-        </a>
-
-        <a href="../index.html#about"    style="margin: 0 10px; text-decoration: none; color: #333;">about</a>
-        <a href="../index.html#projects" style="margin: 0 10px; text-decoration: none; color: #333;">projects</a>
-        <a href="../index.html#contact"  style="margin: 0 10px; text-decoration: none; color: #333;">contact</a>
+<body>
+  <!-- ======== NAVBAR ======== -->
+  <nav style="position: sticky; top: 0; background-color: rgba(255, 255, 255, 0.95); z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <div class="nav-inner">
+      <a href="../index.html#about" class="brand">Anh Tran</a>
+      <a href="../index.html#about">about</a>
+      <a href="../index.html#projects">projects</a>
+      <a href="../index.html#contact">contact</a>
     </div>
+    <div id="scroll-progress"></div>
+  </nav>
 
-    <div id="scroll-progress" style="
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        height: 2px;
-        width: 0%;
-        background-color: #007bff;
-        transition: width 0.1s ease-out;
-        "></div>
-    </nav>
+  <!-- ======== PAGE CONTENT ======== -->
+  <div class="page-wrapper">
+    <!-- HEADER -->
+    <header class="text-center mb-5">
+      <h2><strong>Configurable Logic Block Design, Verification and Optimization</strong></h2>
+    </header>
 
-    <table style="width:100%;max-width:850px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-        <tbody>
+    <!-- MAIN CONTENT -->
+    <main>
+      <p class="mt-4">
+        In this project, I (with my teammate, Linh Chu) designed a 16-bit Configurable Logic Block (CLB), a circuit that can model any 4-input combinational logic function. It is an essential block that provides flexibility for Field Programmable Gate Arrays (FPGAs). The circuit was developed in
+        <strong>45nm Salicide 1.0V/1.8V 1P 11M</strong> technology supported in Cadence.
+      </p>
+
+      <p class="mb-1">Key Components of the Configurable Logic Block include:</p>
+      <ul class="mb-2">
+        <li><a href="#lut">16:1 Lookup Table (LUT)</a></li>
+        <li><a href="#sram">SRAM Array</a></li>
+        <li><a href="#sipo">Serial In Parallel Out (SIPO) Register</a></li>
+        <li><a href="#clk">Non-overlapping Clock Generator</a></li>
+      </ul>
+
+      <p class="mb-1">Finally, these components are integrated to form a comprehensive CLB design:</p>
+      <ul>
+        <li><a href="#clb">Configurable Logic Block</a></li>
+      </ul>
+
+      <!-- === LUT SECTION === -->
+      <section id="lut" class="mb-5">
+        <h3>16:1 Lookup Table (LUT)</h3>
+        <p>
+          The first component in our design is the 16:1 LUT. It accepts 4 binary inputs and stores 16 output values, corresponding to 2<sup>4</sup> possible input combinations. When the LUT receives 4 input values, these values are used as an address to look up the corresponding output from the pre-stored array. The beauty of the LUT is its configurability: by changing the pre-stored array, the LUT can implement any logical function.
+        </p>
+
+        <div class="text-center mb-3 d-flex flex-wrap justify-content-center gap-3">
+          <figure style="max-width:400px; flex: 1 1 200px;">
+            <img src="../../assets/projects/clb/lut/mux21.png" alt="2:1 MUX">
+            <figcaption class="mt-2">2:1 Multiplexer design</figcaption>
+          </figure>
+          <figure style="max-width:300px; flex: 1 1 200px;">
+            <img src="../../assets/projects/clb/lut/mux21_sym.png" alt="2:1 MUX Symbol">
+            <figcaption class="mt-2">2:1 Multiplexer symbol</figcaption>
+          </figure>
+        </div>
+
+        <p>
+          We begin with the design of a 2:1 MUX (similar to LUT, it selects one of two outputs based on a select line). A LUT can be constructed by connecting 15 MUXes in a tree structure, as shown below. Two CMOS logic inverters at the output serve as a buffer, restoring the voltage after pass-transistor logic degradation in the MUXes.
+        </p>
+
+        <div class="text-center mb-3 d-flex flex-wrap justify-content-center gap-3">
+          <figure style="max-width:400px; flex: 1 1 200px;">
+            <img src="../../assets/projects/clb/lut/lut.png" alt="16-input LUT">
+            <figcaption class="mt-2">16-input LUT design</figcaption>
+          </figure>
+          <figure style="max-width:300px; flex: 1 1 200px;">
+            <img src="../../assets/projects/clb/lut/lut_symb.png" alt="LUT Symbol">
+            <figcaption class="mt-2">LUT Symbol</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- === SRAM SECTION === -->
+      <section id="sram" class="mb-5">
+        <h3>SRAM Array</h3>
+        <p>
+          SRAM cells are used to store the possible outputs for the LUT. The figure below shows the design of a single 6T SRAM cell, whose read/write are controlled by the Bit lines (BL and <span style="text-decoration: overline;">BL</span>) and the Word line (WL) signals through precharge and discharge actions. See a tutorial 
+          <a href="https://youtu.be/kU2SsUUsftA?si=ze4-9zVNDbIH421l" target="_blank">here</a> for more details on how an SRAM cell works.
+        </p>
+
+        <div class="text-center mb-3 d-flex flex-wrap justify-content-center gap-3">
+          <figure style="max-width:400px; flex: 1 1 200px;">
+            <img src="../../assets/projects/clb/sram/sram_cell.png" alt="6T SRAM cell">
+            <figcaption class="mt-2">6T SRAM cell</figcaption>
+          </figure>
+          <figure style="max-width:300px; flex: 1 1 200px;">
+            <img src="../../assets/projects/clb/sram/sram_symbol.png" alt="SRAM cell symbol">
+            <figcaption class="mt-2">SRAM cell symbol</figcaption>
+          </figure>
+        </div>
+
+        <p>
+          To control the memory cell more robustly and facilitate integration with other components, we designed additional peripherals and ports:
+        </p>
+        <ul>
+          <li><strong>PC</strong>: Precharge control</li>
+          <li><strong>W_EN</strong>: Write enable</li>
+          <li><strong>WL</strong>: Word line</li>
+          <li><strong>DATA</strong>: Write input</li>
+          <li><strong>OUT</strong>: Read output</li>
+        </ul>
+
+        <div class="text-center mb-3 d-flex flex-wrap justify-content-center gap-3">
+          <figure style="max-width:400px; flex: 1 1 200px;">
+            <img src="../../assets/projects/clb/sram/sram_cell_full.png" alt="SRAM with peripherals">
+            <figcaption class="mt-2">6T SRAM with peripherals</figcaption>
+          </figure>
+          <figure style="max-width:300px; flex: 1 1 200px;">
+            <img src="../../assets/projects/clb/sram/sram_cell_full_symbol.png" alt="SRAM cell symbol">
+            <figcaption class="mt-2">SRAM symbol</figcaption>
+          </figure>
+        </div>
+
+        <p>
+          Sixteen identical cells are combined into a 16‐bit SRAM array:
+        </p>
+        <div class="text-center mb-3">
+          <img src="../../assets/projects/clb/sram/sram_array.png" alt="16-bit SRAM array">
+          <p class="mt-2">16‐bit SRAM array</p>
+        </div>
+      </section>
+
+      <!-- === SIPO SECTION === -->
+      <section id="sipo" class="mb-5">
+        <h3>Serial In Parallel Out (SIPO) Register</h3>
+        <p>
+          To load data into the SRAM array, we use a SIPO register. It converts serial data into parallel data by receiving one bit at a time and then outputting the entire set of bits simultaneously as a parallel word.
+        </p>
+
+        <div class="text-center mb-3 d-flex flex-wrap justify-content-center gap-3">
+          <figure style="max-width:550px; flex: 1 1 200px;">
+            <img src="../../assets/projects/clb/sipo/ff_noQ_circuit.png" alt="D Flip-Flop schematic">
+            <figcaption class="mt-2">D Flip-Flop schematic</figcaption>
+          </figure>
+          <figure style="max-width:200px; flex: 1 1 200px;">
+            <img src="../../assets/projects/clb/sipo/ff_noQ_symbol.png" alt="D Flip-Flop symbol">
+            <figcaption class="mt-2">D Flip-Flop symbol</figcaption>
+          </figure>
+        </div>
+
+        <p>
+          A SIPO register is constructed by cascading 16 D flip-flops, as shown below.
+        </p>
+        <div class="text-center d-flex flex-wrap justify-content-center gap-3">
+          <img src="../../assets/projects/clb/sipo/shift-register-w-arrow.gif" alt="Shift register animation">
+          <img src="../../assets/projects/clb/sipo/sipo_visualization.png" alt="SIPO visualization">
+          <img src="../../assets/projects/clb/sipo/SIPO-1024x452.png" alt="SIPO design overview">
+        </div>
+        <p class="mt-2 text-center">
+          SIPO design and visualization 
+          <a href="https://www.build-electronic-circuits.com/shift-register/" target="_blank">[source]</a>
+        </p>
+      </section>
+
+      <!-- === CLK SECTION === -->
+      <section id="clk" class="mb-5">
+        <h3>Non-overlapping Clock Generator</h3>
+        <p>
+          As can be observed, several components—particularly the flip-flops—use both CLK and <span style="text-decoration: overline;">CLK</span> as inputs. Consequently, we developed a module to generate two complementary clock signals from a single source.
+        </p>
+
+        <div class="text-center d-flex flex-wrap justify-content-center gap-3">
+          <figure style="max-width:550px; flex: 1 1 200px;">
+            <img src="../../assets/projects/clb/clk/clock_circuit.png" alt="Clock generator schematic">
+            <figcaption class="mt-2">Clock generator schematic</figcaption>
+          </figure>
+          <figure style="max-width:200px; flex: 1 1 200px;">
+            <img src="../../assets/projects/clb/clk/clock_symbol.png" alt="Clock generator symbol">
+            <figcaption class="mt-2">Clock generator symbol</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- === CLB SECTION === -->
+      <section id="clb" class="mb-5">
+        <h3>Configurable Logic Block (CLB)</h3>
+        <p>All modules are integrated into a unified CLB design supporting any 4-input combinational function.</p>
+
+        <div class="text-center mb-4">
+          <img src="../../assets/projects/clb/CLB_full_design.png" alt="Complete CLB schematic">
+          <p class="mt-2">Complete CLB schematic</p>
+        </div>
+
+        <h4 class="mt-4">Performance Metrics</h4>
+        <p>After benchmarking our design, the performance parameters of the circuit are reported in the table below:</p>
+
+        <table class="table table-bordered text-center w-75 mx-auto">
+          <thead class="table-light">
             <tr>
-                <td style="padding:0px">
-                    <div class="container" style="padding: 2.5%;">
-                        <header class="text-center mb-5">
-                            <h2><strong>Configurable Logic Block Design, Verification and Optimization</strong></h2>
-                        </header>
-
-                        <main>
-                            <p class="mt-4">In this project, I with my teammate, Linh Chu, designed a 16-bit Configurable Logic Block (CLB), a circuit that can model any 4-input combinational logic function. It is an essential block that provides flexibility for Field Programmable Gate Arrays (FPGAs). The circuit was developed in <strong>45nm Salicide 1.0V/1.8V 1P 11M</strong> technology supported in Cadence.</p>
-                            
-                            <p class="mb-1">Key Components of the Configurable Logic Block includes:</p>
-                            <ul class="mb-2">
-                                <li><a href="#lut">16:1 Lookup Table (LUT)</a></li>
-                                <li><a href="#sram">SRAM Array</a></li>
-                                <li><a href="#sipo">Serial In Parallel Out (SIPO) Register</a></li>
-                                <li><a href="#clk">Non-overlapping Clock Generator</a></li>
-                            </ul>
-
-                            <p class="mb-1">Finally, these components are integrated to form a comprehensive CLB design:</p>
-                            <ul>
-                                <li><a href="#clb">Configurable Logic Block</a></li>
-                            </ul>
-
-                            <section id="lut">
-                                <h3>16:1 Lookup Table (LUT)</h3>
-                                <p>The first component in our design is the 16:1 LUT. It accepts 4 binary inputs and stores 16 output values, corresponding to 2<sup>4</sup> possible input combinations. When the LUT receives 4 input values, these values are used as an address to look up the corresponding output from the pre-stored array. The beauty of LUT is its configurability; by changing the pre-stored array, the LUT can implement any logical function.</p>
-                                <div class="text-center" style="display: flex; justify-content: center; gap: 4px; flex-wrap: wrap;">
-                                    <figure>
-                                        <img src="../../assets/projects/clb/lut/mux21.png" width="400" alt="2:1 MUX">
-                                        <figcaption style="margin-top: 8px;">2:1 Multiplexer design</figcaption>
-                                    </figure>
-                                    <figure>
-                                        <img src="../../assets/projects/clb/lut/mux21_sym.png" width="300" alt="2:1 MUX Symbol">
-                                        <figcaption style="margin-top: 8px;">2:1 Multiplexer symbol</figcaption>
-                                    </figure>
-                                </div>
-                                <p>
-                                We begin with the design of a 2:1 MUX (similar to LUT, it selects one of two outputs based on a select line). A LUT can be constructed by connecting 15 MUXes in a tree structure, as shown below. Two CMOS logic inverters at the output function as serve as a buffer, restoring the voltage after pass-transistor logic degradation in the MUXes.
-                                </p>
-                                <div class="text-center" style="display: flex; justify-content: center; gap: 4px; flex-wrap: wrap;">
-                                    <figure>
-                                        <img src="../../assets/projects/clb/lut/lut.png" width="400" alt="16-input LUT">
-                                        <figcaption style="margin-top: 8px;">16-input LUT design</figcaption>
-                                    </figure>
-                                    <figure>
-                                        <img src="../../assets/projects/clb/lut/lut_symb.png" width="300" alt="LUT Symbol">
-                                        <figcaption style="margin-top: 8px;">LUT Symbol</figcaption>
-                                    </figure>
-                                </div>
-                            </section>
-
-                            <section id="sram">
-                                <h3>SRAM Array</h3>
-                                <p>
-                                    SRAM cells are used to store the possible outputs for the LUT. The figure below shows the design of a single 6T SRAM cell, whose read-write are controlled by the Bit lines (BL and <span style="text-decoration: overline;">BL</span>) and the Word line (WL) signals through precharge and discharge actions. See a nice 
-                                    <a href="https://youtu.be/kU2SsUUsftA?si=ze4-9zVNDbIH421l" target="_blank">tutorial</a> 
-                                    about how an SRAM cell works.
-                                </p>
-                                <div class="text-center" style="display: flex; justify-content: center; gap: 4px; flex-wrap: wrap;">
-                                    <figure>
-                                        <img src="../../assets/projects/clb/sram/sram_cell.png" width="400" alt="6T SRAM cell">
-                                        <figcaption style="margin-top: 8px;">6T SRAM cell</figcaption>
-                                    </figure>
-                                    <figure>
-                                        <img src="../../assets/projects/clb/sram/sram_symbol.png" width="300" alt="SRAM cell symbol">
-                                        <figcaption style="margin-top: 8px;">SRAM cell symbol</figcaption>
-                                    </figure>
-                                </div>
-                                <p>
-                                    However, to control the memory cell more robustly and facilitate integration with other components, we have designed additional peripherals and ports:
-                                </p>
-                                <ul>
-                                    <li><strong>PC</strong>: Precharge condition</li>
-                                    <li><strong>W_EN</strong>: Write enable</li>
-                                    <li><strong>WL</strong>: Word line</li>
-                                    <li><strong>DATA</strong>: Write input</li>
-                                    <li><strong>OUT</strong>: Read output</li>
-                                </ul>
-
-                                <div class="text-center" style="display: flex; justify-content: center; gap: 4px; flex-wrap: wrap;">
-                                    <figure>
-                                        <img src="../../assets/projects/clb/sram/sram_cell_full.png" width="400" alt="SRAM with peripherals">
-                                        <figcaption style="margin-top: 8px;">6T SRAM with peripherals</figcaption>
-                                    </figure>
-                                    <figure>
-                                        <img src="../../assets/projects/clb/sram/sram_cell_full_symbol.png" width="300" alt="SRAM cell symbol">
-                                        <figcaption style="margin-top: 8px;">SRAM symbol</figcaption>
-                                    </figure>
-                                </div>
-                                
-                                <p>
-                                    Sixteen identical cells are combined into a 16-bit SRAM array.
-                                </p>
-
-                                <div class="text-center">
-                                    <img src="../../assets/projects/clb/sram/sram_array.png" width="750">
-                                    <p>16-bit SRAM array</p>
-                                </div>
-                            </section>
-
-                            <section id="sipo">
-                                <h3>Serial In Parallel Out (SIPO) Register</h3>
-                                <p>To load data into the SRAM array, we use a SIPO register. It converts serial data into parallel data by receiving one bit at a time and then outputting the entire set of taken bits simultaneously as a parallel word.</p>
-                                <div class="text-center" style="display: flex; justify-content: center; gap: 4px; flex-wrap: wrap;">
-                                    <figure>
-                                        <img src="../../assets/projects/clb/sipo/ff_noQ_circuit.png" width="550" alt="D Flip-Flop schematic">
-                                        <figcaption style="margin-top: 8px;">D Flip-Flop schematic</figcaption>
-                                    </figure>
-                                    <figure>
-                                        <img src="../../assets/projects/clb/sipo/ff_noQ_symbol.png" width="200" alt="D Flip-Flop symbol">
-                                        <figcaption style="margin-top: 8px;">D Flip-Flop symbol</figcaption>
-                                    </figure>
-                                </div>
-                                <p>
-                                    A SIPO register is constructed by cascading 16 D flip-flops, as demonstrated below.
-                                </p>
-                                <div class="text-center">
-                                    <img src="../../assets/projects/clb/sipo/shift-register-w-arrow.gif" width="400">
-                                    <img src="../../assets/projects/clb/sipo/sipo_visualization.png" width="400">
-                                    <img src="../../assets/projects/clb/sipo/SIPO-1024x452.png" width="400">
-                                    <p>SIPO design and visualization <a href="https://www.build-electronic-circuits.com/shift-register/">[source]</a></p>
-                                </div>
-                            </section>
-
-                            <section id="clk">
-                                <h3>Non-overlapping Clock Generator</h3>
-                                <p>As can be observed, several components, particularly the flip-flops, utilize both CLK and CLK as inputs. Consequently, we developed a module to generate two complementary clock signals from a single source.</p>
-                                 <div class="text-center" style="display: flex; justify-content: center; gap: 4px; flex-wrap: wrap;">
-                                    <figure>
-                                        <img src="../../assets/projects/clb/clk/clock_circuit.png" width="550" alt="Clock generator schematic">
-                                        <figcaption style="margin-top: 8px;">Clock generator schematic</figcaption>
-                                    </figure>
-                                    <figure>
-                                        <img src="../../assets/projects/clb/clk/clock_symbol.png" width="200" alt="Clock generator symbol">
-                                        <figcaption style="margin-top: 8px;">Clock generator symbol</figcaption>
-                                    </figure>
-                                </div>
-                            </section>
-
-                            <section id="clb">
-                                <h3>Configurable Logic Block (CLB)</h3>
-                                <p>All modules are integrated into a unified CLB design supporting any 4-input combinational function.</p>
-                                <div class="text-center">
-                                    <img src="../../assets/projects/clb/CLB_full_design.png" width="750">
-                                    <p>Complete CLB schematic</p>
-                                </div>
-
-                                <h4 class="mt-4">Performance Metrics</h4>
-                                <p>
-                                    After benchmarking our design, the performance parameters of the circuit are reported in the table below:
-                                </p>
-                                <table class="table table-bordered text-center w-50 mx-auto">
-                                    <thead class="table-light">
-                                        <tr><th>Metric</th><th>Value</th></tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr><td>Max frequency</td><td>1 GHz</td></tr>
-                                        <tr><td>Loading Energy</td><td>3.212 × 10<sup>-3</sup> nJ</td></tr>
-                                        <tr><td>Active Energy</td><td>1.895 × 10<sup>-3</sup> nJ</td></tr>
-                                    </tbody>
-                                </table>
-                                <p><strong>*</strong> <em>Loading Energy</em>: energy consumed by the entire circuit to load all the data into the SRAM</p>
-                                <p><strong>*</strong> <em>Active Energy</em>: energy consumed to cycle through all possible input combinations from 0 to 15 at the maximum operating frequency</p>
-
-                                <p class="mt-4">Here is the overall design procedure from our team for designing a 16-bit CLB. Additionally, the methods for sizing, designing testing schematic, resolving timing hazards, and circuit-level optimization are presented in detail in our report, which will be available upon request. Feel free to reach out if you need any further information or have any questions about the project 😀</p>
-                            </section>
-                        </main>
-                    </div>
-                </td>
+              <th>Metric</th>
+              <th>Value</th>
             </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Max frequency</td>
+              <td>1 GHz</td>
+            </tr>
+            <tr>
+              <td>Loading Energy</td>
+              <td>3.212 × 10<sup>−3</sup> nJ</td>
+            </tr>
+            <tr>
+              <td>Active Energy</td>
+              <td>1.895 × 10<sup>−3</sup> nJ</td>
+            </tr>
+          </tbody>
+        </table>
 
-            <script>
-                // dynamically updates the width of the scroll indicator bar (#scroll-progress) as the user scrolls through the page. 
-                window.addEventListener('scroll', () => {
-                    const scrollTop = window.scrollY;
-                    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-                    const scrollPercent = (scrollTop / docHeight) * 100;
-                    document.getElementById('scroll-progress').style.width = scrollPercent + '%';
-                });
-            </script>
-        </tbody>
-    </table>
+        <p class="mt-2">
+          <strong>*</strong> <em>Loading Energy</em>: energy consumed by the entire circuit to load all the data into the SRAM  
+          <br>
+          <strong>*</strong> <em>Active Energy</em>: energy consumed to cycle through all possible input combinations from 0 to 15 at the maximum operating frequency
+        </p>
+
+        <p class="mt-4">
+          Here is the overall design procedure from our team for designing a 16-bit CLB. Additionally, the methods for sizing, designing/testing schematics, resolving timing hazards, and circuit-level optimization are presented in detail in our report, which is available upon request. Feel free to reach out if you need any further information or have any questions about the project 😀
+        </p>
+      </section>
+    </main>
+  </div>
+
+
+  <!-- ======== SCROLL PROGRESS SCRIPT ======== -->
+  <script>
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      document.getElementById('scroll-progress').style.width = scrollPercent + '%';
+    });
+  </script>
 </body>
-
 </html>

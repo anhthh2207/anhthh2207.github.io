@@ -1,51 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Fast, Compact and Efficient DNN via Pruning and Sparse Matrix Compression</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+  />
 
   <style>
-      nav div {
-      line-height: 24px;
-      }
-  </style>
-</head>
+    /* remove default body margins so navbar spans edge-to-edge */
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
 
-<body style="margin-top:0px; margin-bottom:40px">
-  <nav style="position: sticky; 
-                top: 0; 
-                background-color: rgba(255, 255, 255, 0.95); 
-                z-index: 1000; 
-                box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-  <div style="
-      max-width: 850px;     
-      margin: 0 auto;         /* center it in the viewport */
-      padding: 10px 0px 10px 12px;
+    /* navbar’s inner container capped at 850px */
+    nav > .nav-inner {
+      max-width: 850px;
+      margin: 0 auto;
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      ">
-      <a href="../index.html#about"
-          style="
-              margin-right: auto;
-              margin-left: 10px;
-              text-decoration: none;
-              color: #333;
-              font-size: 20px;
-              font-weight: normal;
-          ">
-          Anh Tran
-      </a>
+      padding: 10px 0px 10px 18px;
+    }
 
-      <a href="../index.html#about"    style="margin: 0 10px; text-decoration: none; color: #333;">about</a>
-      <a href="../index.html#projects" style="margin: 0 10px; text-decoration: none; color: #333;">projects</a>
-      <a href="../index.html#contact"  style="margin: 0 10px; text-decoration: none; color: #333;">contact</a>
-  </div>
-
-  <div id="scroll-progress" style="
+    /* scroll-progress bar styling */
+    #scroll-progress {
       position: absolute;
       bottom: 0;
       left: 0;
@@ -53,97 +35,181 @@
       width: 0%;
       background-color: #007bff;
       transition: width 0.1s ease-out;
-      "></div>
+    }
+
+    /* wrapper that caps content at 850px and centers it */
+    .page-wrapper {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 2.5% 1rem;
+    }
+
+    /* make all images inside wrapper fluid */
+    .page-wrapper img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ensure paragraphs and list items wrap normally */
+    .page-wrapper p,
+    .page-wrapper li {
+      white-space: normal;
+      overflow-wrap: break-word;
+    }
+
+    /* simple link styling in nav */
+    .nav-inner a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #333;
+      font-size: 1rem;
+    }
+    .nav-inner .brand {
+      margin-right: auto;
+      margin-left: 0;
+      font-size: 1.25rem;
+      font-weight: 500;
+    }
+    
+    nav div {
+      line-height: 24px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ======== NAVBAR ======== -->
+  <nav style="position: sticky; top: 0; background-color: rgba(255, 255, 255, 0.95); z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <div class="nav-inner">
+      <a href="../index.html#about" class="brand">Anh Tran</a>
+      <a href="../index.html#about">about</a>
+      <a href="../index.html#projects">projects</a>
+      <a href="../index.html#contact">contact</a>
+    </div>
+    <div id="scroll-progress"></div>
   </nav>
 
-  <table style="width:100%;max-width:850px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-    <tbody>
-      <tr>
-        <td style="padding:0px">
-          <div class="container" style="padding: 2.5%;">
-            <header class="text-center mb-5">
-              <h1><strong>Fast, Compact and Efficient DNN via Pruning and Sparse Matrix Compression</strong></h1>
-            </header>
+  <!-- ======== PAGE CONTENT ======== -->
+  <div class="page-wrapper">
+    <!-- HEADER -->
+    <header class="text-center mb-5">
+      <h2><strong>Fast, Compact and Efficient DNN via Pruning and Sparse Matrix Compression</strong></h2>
+    </header>
 
-            <main>
-              <!-- <p class="fst-italic">
-                A big shoutout to my incredible teammates — Prakriti Prasad, Shreyas Muthusamy and Shubhodeep Aditya — who stood by me through an unforgettable semester. From countless sleepless nights of debugging to all the shared moments of frustration and small wins, I’ve learned so much from each of you.
-              </p>
-              <p>This is a compilation of the methods that we have developed for our F1/10 cars for the labs and races in the course <strong>ESE 6150 - Autonomous Racing Cars</strong> @ University of Pennsylvania.</p>
-              <p><strong><em>Please note that all animations in this article are displayed at 2x speed.</em></strong></p>
+    <!-- <main>
+      <p class="fst-italic">
+        A big shoutout to my incredible teammates — Prakriti Prasad, Shreyas Muthusamy, and Shubhodeep Aditya — who stood by me through an unforgettable semester. From countless sleepless nights of debugging to all the shared moments of frustration and small wins, I’ve learned so much from each of you.
+      </p>
+      <p>
+        This is a compilation of the methods that we have developed for our F1/10 cars for the labs and races in the course <strong>ESE 6150 - Autonomous Racing Cars</strong> @ University of Pennsylvania.
+      </p>
+      <p><strong><em>Please note that all animations in this article are displayed at 2x speed.</em></strong></p>
 
-              <h3>Table of Contents</h3>
-              <ul>
-                <li><a href="#reactive">1. Reactive Methods</a></li>
-                <li><a href="#planning">2. Planning-based Methods</a></li>
-              </ul>
+      <h3>Table of Contents</h3>
+      <ul>
+        <li><a href="#reactive">1. Reactive Methods</a></li>
+        <li><a href="#planning">2. Planning-based Methods</a></li>
+      </ul>
 
-              <section id="reactive">
-                <h3>1. Reactive Methods</h3>
-                <p>Reactive methods are control strategies that utilize real-time sensor data to generate immediate responses without relying on complex planning or mapping, making them effective when the agent lacks prior knowledge about surrounding environment. However, these approaches are quite sensitive to noise and uncertainty, have limited adaptability to complex scenarios, and often yield suboptimal behaviors.</p>
+      <section id="reactive" class="mb-5">
+        <h3>1. Reactive Methods</h3>
+        <p>
+          Reactive methods are control strategies that utilize real-time sensor data to generate immediate responses without relying on complex planning or mapping, making them effective when the agent lacks prior knowledge about the surrounding environment. However, these approaches are quite sensitive to noise and uncertainty, have limited adaptability to complex scenarios, and often yield suboptimal behaviors.
+        </p>
 
-                <h5>Wall-following</h5>
-                <p>The very first algorithm we employed was PID wall-following. Its principle is straightforward: the robot navigates along the wall while maintaining a fixed distance. The PID controller adjusts the steering angle to keep the distance between the agent and the wall constant.</p>
-                <div class="text-center">
-                  <img src="../../assets/projects/f1tenth/wall-follow-levined-blocked.gif" alt="PID wall-following" width="400">
-                  <p class="fst-italic">PID wall-following</p>
-                </div>
-                <p>This algorithm has a relatively simple implementation; however, it demands extensive time for tuning the PID gains. Moreover, it is inefficient in handling environmental irregularities—for example, it struggles with sharp turns and indentations. Finally, achieving high velocities is almost impossible, as evidenced by significant wobbling even at a low speed, which would be exacerbated at higher speeds.</p>
+        <h5>Wall-following</h5>
+        <p>
+          The very first algorithm we employed was PID wall-following. Its principle is straightforward: the robot navigates along the wall while maintaining a fixed distance. The PID controller adjusts the steering angle to keep the distance between the agent and the wall constant.
+        </p>
+        <div class="text-center mb-4">
+          <img
+            src="../../assets/projects/f1tenth/wall-follow-levined-blocked.gif"
+            alt="PID wall-following"
+          />
+          <p class="fst-italic">PID wall-following</p>
+        </div>
+        <p>
+          This algorithm has a relatively simple implementation; however, it demands extensive time for tuning the PID gains. Moreover, it is inefficient in handling environmental irregularities—for example, it struggles with sharp turns and indentations. Finally, achieving high velocities is almost impossible, as evidenced by significant wobbling even at a low speed, which would be exacerbated at higher speeds.
+        </p>
 
-                <h5>Gap-following</h5>
-                <p>By identifying the nearest obstacles or sharp disparities in the LIDAR data and masking out an area corresponding to the agent’s size, gap-following algorithm defines gaps (open spaces) for navigation. The agent then moves toward the gap that is widest or extends the farthest.</p>
-                <div class="row text-center">
-                  <div class="col-md-6">
-                    <img src="../../assets/projects/f1tenth/gap-follow-levine-blocked.gif" alt="Gap-following no obstacle" class="img-fluid">
-                    <p class="fst-italic">Gap-following in obstacle-free map</p>
-                  </div>
-                  <div class="col-md-6">
-                    <img src="../../assets/projects/f1tenth/gap-follow-levine-obs.gif" alt="Gap-following with obstacle" class="img-fluid">
-                    <p class="fst-italic">Gap-following in obstacle map</p>
-                  </div>
-                </div>
-                <p>Apparently, this algorithm allows for much smoother motion and higher speeds than wall-following. Additionally, thanks to its smooth and stable motion, the robot can easily avoid obstacles while exploring an unknown environment (at a conservative speed). However, it still exhibits the inherent limitation of reactive methods, namely that the generated trajectories are suboptimal.</p>
-              </section>
-
-              <section id="planning">
-                <h3>2. Planning-based Methods</h3>
-                <p>Reactive strategies are effective in well-structured and predictable environments but often struggle with local minima and unexpected oscillatory behavior. However, in racing, where even a few milliseconds can create huge difference, an optimal and efficient navigation is strictly required. Planning-based methods bring us closer to this objective by leveraging available environmental information (e.g., maps, constraints) or prior experience (e.g., recorded paths), resulting in more stable and optimal performance.</p>
-
-                <h5>Pure Pursuit</h5>
-                <p>Given a pre-planned trajectory and the agent’s ability to accurately locate itself in the environment (e.g., via SLAM and particle filter), pure pursuit algorithm computes driving commands by targeting a point at a fixed look-ahead distance along the planned path.</p>
-                <div class="row text-center">
-                  <div class="col-md-6">
-                    <img src="../../assets/projects/f1tenth/pure-pursuit-slam-levine.gif" alt="Pure pursuit SLAM" class="img-fluid">
-                    <p class="fst-italic">Pure pursuit with SLAM-estimated map</p>
-                  </div>
-                  <div class="col-md-6">
-                    <img src="../../assets/projects/f1tenth/pure-pursuit-fastest.gif" alt="Pure pursuit dynamic" class="img-fluid">
-                    <p class="fst-italic">Enhanced pure pursuit with trajectory smoothing</p>
-                  </div>
-                </div>
-                <p>Despite its suprising simplicity, this algorithm delivers superior speed and stability compared to reactive approaches. Additionally, developers can easily combine it with other methods to optimize the input trajectory or speed management, further improving lap times.</p>
-              </section>
-
-              <div class="text-center mt-4">
-                <em>The project is currently in progress and will be updated in the near future.</em><br>
-                <em>If you have any questions or are interested in the project, please contact me for further information.</em>
-              </div> -->
-            </main>
+        <h5>Gap-following</h5>
+        <p>
+          By identifying the nearest obstacles or sharp disparities in the LIDAR data and masking out an area corresponding to the agent’s size, the gap-following algorithm defines “gaps” (open spaces) for navigation. The agent then moves toward the gap that is widest or extends the farthest.
+        </p>
+        <div class="row text-center mb-4">
+          <div class="col-md-6 mb-3 mb-md-0">
+            <img
+              src="../../assets/projects/f1tenth/gap-follow-levine-blocked.gif"
+              alt="Gap-following no obstacle"
+              class="img-fluid"
+            />
+            <p class="fst-italic">Gap-following in obstacle-free map</p>
           </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+          <div class="col-md-6">
+            <img
+              src="../../assets/projects/f1tenth/gap-follow-levine-obs.gif"
+              alt="Gap-following with obstacle"
+              class="img-fluid"
+            />
+            <p class="fst-italic">Gap-following in obstacle map</p>
+          </div>
+        </div>
+        <p>
+          Apparently, this algorithm allows for much smoother motion and higher speeds than wall-following. Additionally, thanks to its smooth and stable motion, the robot can easily avoid obstacles while exploring an unknown environment (at a conservative speed). However, it still exhibits the inherent limitation of reactive methods, namely that the generated trajectories are suboptimal.
+        </p>
+      </section>
 
+      <section id="planning" class="mb-5">
+        <h3>2. Planning-based Methods</h3>
+        <p>
+          Reactive strategies are effective in well-structured and predictable environments but often struggle with local minima and unexpected oscillatory behavior. However, in racing, where even a few milliseconds can make a huge difference, an optimal and efficient navigation is strictly required. Planning-based methods bring us closer to this objective by leveraging available environmental information (e.g., maps, constraints) or prior experience (e.g., recorded paths), resulting in more stable and optimal performance.
+        </p>
+
+        <h5>Pure Pursuit</h5>
+        <p>
+          Given a pre-planned trajectory and the agent’s ability to accurately locate itself in the environment (e.g., via SLAM and particle filter), the pure pursuit algorithm computes driving commands by targeting a point at a fixed look-ahead distance along the planned path.
+        </p>
+        <div class="row text-center mb-4">
+          <div class="col-md-6 mb-3 mb-md-0">
+            <img
+              src="../../assets/projects/f1tenth/pure-pursuit-slam-levine.gif"
+              alt="Pure pursuit SLAM"
+              class="img-fluid"
+            />
+            <p class="fst-italic">Pure pursuit with SLAM-estimated map</p>
+          </div>
+          <div class="col-md-6">
+            <img
+              src="../../assets/projects/f1tenth/pure-pursuit-fastest.gif"
+              alt="Pure pursuit dynamic"
+              class="img-fluid"
+            />
+            <p class="fst-italic">Enhanced pure pursuit with trajectory smoothing</p>
+          </div>
+        </div>
+        <p>
+          Despite its surprising simplicity, this algorithm delivers superior speed and stability compared to reactive approaches. Additionally, developers can easily combine it with other methods to optimize the input trajectory or speed management, further improving lap times.
+        </p>
+      </section>
+
+      <div class="text-center mt-4">
+        <em>The project is currently in progress and will be updated in the near future.</em><br />
+        <em>If you have any questions or are interested in the project, please contact me for further information.</em>
+      </div>
+    </main>
+  </div> -->
+
+  <!-- ======== SCROLL PROGRESS SCRIPT ======== -->
   <script>
-    // dynamically updates the width of the scroll indicator bar (#scroll-progress) as the user scrolls through the page. 
     window.addEventListener('scroll', () => {
-        const scrollTop = window.scrollY;
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const scrollPercent = (scrollTop / docHeight) * 100;
-        document.getElementById('scroll-progress').style.width = scrollPercent + '%';
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      document.getElementById('scroll-progress').style.width = scrollPercent + '%';
     });
   </script>
 </body>
-
 </html>
