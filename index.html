@@ -2,9 +2,7 @@
 <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
     <title>Anh Tran</title>
-
     <meta name="author" content="Anh Tran">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
@@ -18,8 +16,8 @@
         border-radius: 10px;
         overflow: hidden;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-        /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.00); */
-        transition: box-shadow 0.1s ease-out, transform 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: box-shadow 0.1s ease-out,
+                    transform 0.1s cubic-bezier(0.4, 0, 0.2, 1);
       }
 
       .project-box:hover {
@@ -42,25 +40,34 @@
         scroll-behavior: smooth;
       }
     </style>
-        
   </head>
 
-  <body style="margin-top:0px;">
+  <body style="margin: 0; margin-bottom: 40px;">
     <!-- nav bar -->
-    <nav style="position: sticky; 
-                top: 0; 
-                background-color: rgba(255, 255, 255, 0.95); 
-                z-index: 1000; 
-                box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-      <div style="max-width: 850px;  /* FIXED width */
-                  margin: 0 auto; 
-                  padding: 10px 0px 10px 0px;
-                  display: flex; 
-                  justify-content: flex-end; 
-                  align-items: center;">
-        <a href="#about" style="margin: 0 10px; text-decoration: none; color: #333;">about</a>
-        <a href="#projects" style="margin: 0 10px; text-decoration: none; color: #333;">projects</a>
-        <a href="#contact" style="margin: 0 10px; text-decoration: none; color: #333;">contact</a>
+    <nav style="
+      position: sticky;
+      top: 0;
+      background-color: rgba(255, 255, 255, 0.95);
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    ">
+      <div style="
+        max-width: 850px;
+        margin: 0 auto;
+        padding: 10px 0;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      ">
+        <a href="#about" style="margin: 0 10px; text-decoration: none; color: #333;">
+          about
+        </a>
+        <a href="#projects" style="margin: 0 10px; text-decoration: none; color: #333;">
+          projects
+        </a>
+        <a href="#contact" style="margin: 0 10px; text-decoration: none; color: #333;">
+          contact
+        </a>
       </div>
 
       <div id="scroll-progress" style="
@@ -74,370 +81,442 @@
       "></div>
     </nav>
 
+    <table style="
+      width: 100%;
+      max-width: 850px;
+      border: 0;
+      border-spacing: 0;
+      border-collapse: separate;
+      margin: 0 auto;
+    ">
+      <tbody>
+        <tr>
+          <td style="padding: 0;">
+            <!-- ABOUT -->
+            <table style="
+              width: 100%;
+              border: 0;
+              border-spacing: 0;
+              border-collapse: separate;
+              margin: 0 auto;
+            ">
+              <tbody>
+                <tr>
+                  <td id="about" style="padding: 2.5%; width: 63%; vertical-align: middle;">
+                    <p class="name" style="text-align: left; font-size: 2rem; font-weight: 600;">
+                      Anh Tran
+                    </p>
+                    <p>
+                      I am currently an Electrical Engineering Master's student at the
+                      <a href="https://www.seas.upenn.edu/">University of Pennsylvania</a>
+                      <img src="assets/icons/upenn_logo.png" alt="UPenn logo" style="
+                        width: 0.84em;
+                        height: 0.95em;
+                        vertical-align: text-bottom;
+                        margin-bottom: 0.17em;
+                      ">
+                      . I previously completed my undergraduate studies in Electrical and Computer Engineering at
+                      <a href="https://cecs.vinuni.edu.vn/">VinUniversity</a>
+                      <img src="assets/icons/vinuni_logo.png" alt="VinUni logo" style="
+                        width: 0.91em;
+                        height: 0.95em;
+                        vertical-align: text-bottom;
+                        margin-bottom: 0.17em;
+                      ">
+                      .
+                    </p>
+                    <p>
+                      My background covers computer architecture, FPGA design, parallel programming, and machine learning. I am particularly passionate about bridging these fields to drive innovation and efficiency.
+                    </p>
+                    <p style="text-align: center;">
+                      <a href="mailto:anhthh@seas.upenn.edu">Email</a> &nbsp;/&nbsp;
+                      <a href="assets/Tran_Huy_Hoang_Anh_CV.pdf">CV</a> &nbsp;/&nbsp;
+                      <a href="https://www.linkedin.com/in/anh-thh/">LinkedIn</a> &nbsp;/&nbsp;
+                      <a href="https://www.facebook.com/anh.tranhuyhoang">Facebook</a> &nbsp;/&nbsp;
+                      <a href="https://github.com/anhthh2207">Github</a>
+                    </p>
+                  </td>
+                  <td style="padding: 2.5%; width: 37%; max-width: 37%; vertical-align: middle;">
+                    <a href="assets/prof_pic.png">
+                      <img src="assets/prof_pic.png" alt="profile photo" style="
+                        width: 100%;
+                        max-width: 100%;
+                        object-fit: cover;
+                        border-radius: 50%;
+                      " class="hoverZoomLink">
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
 
-    <table style="width:100%;max-width:850px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-      <tr style="padding:0px">
-        <td style="padding:0px">
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr style="padding:0px">
-              <td style="padding:2.5%;width:63%;vertical-align:middle" id="about">
-                <p class="name" style="text-align: left;">
-                  Anh Tran
-                </p>
-                <!-- <p style="text-align: left; padding-top: 20px; margin: 0; font-family: 'Lato', Verdana, Helvetica, sans-serif; font-size: 32px;">
-                  Anh Tran
-                </p> -->
-                <p>
-    I am currently an Electrical Engineering Master's student at the <a href="https://www.seas.upenn.edu/">University of Pennsylvania</a> <img src="assets/icons/upenn_logo.png" alt="UPenn logo" style="width:0.84em; height:0.95em; vertical-align:text-bottom; margin-bottom:+0.17em;">. 
-    I previously completed my undergraduate studies in Electrical and Computer Engineering at <a href="https://cecs.vinuni.edu.vn/">VinUniversity</a>
-    <img src="assets/icons/vinuni_logo.png" alt="VinUni logo" style="width:0.91em; height:0.95em; vertical-align:text-bottom; margin-bottom:+0.17em;">. 
-                </p>
-                <p>
-    My background covers computer architecture, FPGA design, parallel programming, and machine learning. I am particularly passionate 
-    about bridging these fields to drive innovation and efficiency
-                </p>
-                <p style="text-align:center">
-                  <a href="mailto:anhthh@seas.upenn.edu">Email</a> &nbsp;/&nbsp;
-                  <a href="assets/Tran_Huy_Hoang_Anh_CV.pdf">CV</a> &nbsp;/&nbsp;
-                  <a href="https://www.linkedin.com/in/anh-thh/">LinkedIn</a> &nbsp;/&nbsp;
-                  <a href="https://www.facebook.com/anh.tranhuyhoang">Facebook</a> &nbsp;/&nbsp;
-                  <a href="https://github.com/anhthh2207">Github</a>
-                </p>
-              </td>
-              <td style="padding:2.5%;width:37%;max-width:37%">
-                <a href="assets/prof_pic.png"><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="assets/prof_pic.png" class="hoverZoomLink"></a>
-              </td>
-            </tr>
-          </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-              <tr>
-              <td style="padding:16px;width:100%;vertical-align:middle" id="projects">
-                <h2>projects</h2>
-                <p>
-                  Take a look at some of my past projects! I mainly work on digital design and efficient machine learning. 
-                  In my free time, I also enjoy exploring topics like computer vision, control, and robotics.
-                </p>
-              </td>
-            </tr>
-          </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <!-- PROJECTS HEADER -->
+            <table style="
+              width: 100%;
+              border: 0;
+              border-spacing: 0;
+              border-collapse: separate;
+              margin: 0 auto;
+              margin-top: 1rem;
+            ">
+              <tbody>
+                <tr>
+                  <td id="projects" style="padding: 16px; width: 100%; vertical-align: middle;">
+                    <h2>projects</h2>
+                    <p>
+                      Take a look at some of my past projects! I mainly work on digital design and efficient machine learning.
+                      In my free time, I also enjoy exploring topics like computer vision, control, and robotics.
+                    </p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
 
-    <!-- riscv project -->
-    <tr onmouseout="riscv_stop()" onmouseover="riscv_start()" bgcolor="#ffffff">
-      <td colspan="2" style="padding:4px 0;">
-        <div class="project-box" style="display: flex; flex-wrap: wrap; align-items:center;">
-          <div style="flex: 0 0 160px; padding: 16px;">
-            <div class="one" style="position: relative;">
-              <div class="two" id='riscv_cover' style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.2s;">
-                <video width="100%" height="100%" muted autoplay loop style="object-fit: cover;">
-                  <source src="assets/projects/riscv_core/thumbnail.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-              <img src='assets/projects/riscv_core/cover_pic.png' width="160" style="display: block;">
-            </div>
-            <script type="text/javascript">
-              function riscv_start() {
-                document.getElementById('riscv_cover').style.opacity = "1";
-              }
+            <!-- PROJECT LIST -->
+            <table style="
+              width: 100%;
+              border: 0;
+              border-spacing: 0 10px;
+              border-collapse: separate;
+              margin: 0 auto;
+            ">
+              <tbody>
+                <!-- RISC-V project -->
+                <tr onmouseover="riscv_start()" onmouseout="riscv_stop()" bgcolor="#ffffff">
+                  <td colspan="2" style="padding: 4px 0;">
+                    <div class="project-box">
+                      <div style="flex: 0 0 160px; padding: 16px;">
+                        <div class="one" style="position: relative;">
+                          <div class="two" id="riscv_cover" style="
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            opacity: 0;
+                            transition: opacity 0.2s;
+                          ">
+                            <video width="100%" height="100%" muted autoplay loop style="object-fit: cover;">
+                              <source src="assets/projects/riscv_core/thumbnail.mp4" type="video/mp4">
+                              Your browser does not support the video tag.
+                            </video>
+                          </div>
+                          <img src="assets/projects/riscv_core/cover_pic.png" width="160" style="display: block;">
+                        </div>
+                        <script>
+                          function riscv_start() {
+                            document.getElementById("riscv_cover").style.opacity = "1";
+                          }
+                          function riscv_stop() {
+                            document.getElementById("riscv_cover").style.opacity = "0";
+                          }
+                          riscv_stop();
+                        </script>
+                      </div>
+                      <div style="flex: 1; padding: 16px;">
+                        <a href="projects_pages/riscv.html">
+                          <span class="papertitle">Pipelined RISCV Processor</span>
+                        </a>
+                        <br>
+                        <a href="projects_pages/riscv.html">project page</a> /
+                        <a href="https://github.com/anhthh2207/cis5710-homework.git">code</a>
+                        <p style="margin-top: 8px;">
+                          A custom 32-bit RISC-V core in SystemVerilog with a five-stage fully pipelined datapath, including full forwarding
+                          and hazard control. It features I$ and D$ that interface with main memory via the AXIL protocol, along with
+                          low-latency operators such as a Carry-Lookahead Adder and an 8-cycle divider.
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
 
-              function riscv_stop() {
-                document.getElementById('riscv_cover').style.opacity = "0";
-              }
-              riscv_stop();
-            </script>
-          </div>
+                <!-- CSR project -->
+                <tr onmouseover="csr_start()" onmouseout="csr_stop()" bgcolor="#ffffff">
+                  <td colspan="2" style="padding: 4px 0;">
+                    <div class="project-box">
+                      <div style="flex: 0 0 160px; padding: 16px;">
+                        <div class="one" style="position: relative;">
+                          <div class="two" id="csr_cover" style="
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            opacity: 0;
+                            transition: opacity 0.2s;
+                          ">
+                            <video width="100%" height="100%" muted autoplay loop style="object-fit: cover;">
+                              <source src="assets/projects/csr/cover_pic.png">
+                              Your browser does not support the video tag.
+                            </video>
+                          </div>
+                          <img src="assets/projects/csr/cover_pic.png" width="160" style="display: block;">
+                        </div>
+                        <script>
+                          function csr_start() {
+                            document.getElementById("csr_cover").style.opacity = "1";
+                          }
+                          function csr_stop() {
+                            document.getElementById("csr_cover").style.opacity = "0";
+                          }
+                          csr_stop();
+                        </script>
+                      </div>
+                      <div style="flex: 1; padding: 16px;">
+                        <a href="projects_pages/csr.html">
+                          <span class="papertitle">Efficient DNN via Pruning & Sparse Matrix Compression</span>
+                        </a>
+                        <br>
+                        <a href="projects_pages/csr.html">project page</a> /
+                        <a href="https://github.com/ESE-5390-Fall-2024/project-group-09">code</a>
+                        <p style="margin-top: 8px;">
+                          This project investigated different pruning patterns and sparsity levels, and developed a custom linear layer leveraging the Compressed Sparse Row (CSR) format to improve memory efficiency and accelerate neural network inference.
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
 
-          <div style="flex: 1; padding: 16px;">
-            <a href="projects_pages/riscv.html">
-              <span class="papertitle">Pipelined RISCV Processor</span>
-            </a>
-            <br>
-            <a href="projects_pages/riscv.html">project page</a> /
-            <a href="https://github.com/anhthh2207/cis5710-homework.git">code</a>
-            <p></p>
-            <p style="margin-top: 8px;">
-              A custom 32-bit RISC-V core in SystemVerilog with a five-stage fully pipelined datapath, including full forwarding
-              and hazard control. It features I$ and D$ that interface with main memory via the AXIL protocol, along with
-              low-latency operators such as a Carry-Lookahead Adder and an 8-cycle divider.
-            </p>
-          </div>
-        </div>
-      </td>
-    </tr>
+                <!-- CLB project -->
+                <tr onmouseover="clb_start()" onmouseout="clb_stop()" bgcolor="#ffffff">
+                  <td colspan="2" style="padding: 4px 0;">
+                    <div class="project-box">
+                      <div style="flex: 0 0 160px; padding: 16px;">
+                        <div class="one" style="position: relative;">
+                          <div class="two" id="clb_cover" style="
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            opacity: 0;
+                            transition: opacity 0.2s;
+                          ">
+                            <video width="100%" height="100%" muted autoplay loop style="object-fit: cover;">
+                              <source src="assets/projects/clb/cover_pic.png">
+                              Your browser does not support the video tag.
+                            </video>
+                          </div>
+                          <img src="assets/projects/clb/cover_pic.png" width="160" style="display: block;">
+                        </div>
+                        <script>
+                          function clb_start() {
+                            document.getElementById("clb_cover").style.opacity = "1";
+                          }
+                          function clb_stop() {
+                            document.getElementById("clb_cover").style.opacity = "0";
+                          }
+                          clb_stop();
+                        </script>
+                      </div>
+                      <div style="flex: 1; padding: 16px;">
+                        <a href="projects_pages/clb.html">
+                          <span class="papertitle">Configurable Logic Block Design, Verification and Optimization</span>
+                        </a>
+                        <br>
+                        <a href="projects_pages/clb.html">project page</a>
+                        <p style="margin-top: 8px;">
+                          This project presents the design and verification of a 16-bit Configurable Logic Block (CLB) implemented using Cadence 45nm Salicide 1.0V/1.8V 1P 11M technology. Our design integrates key modules, including a 16:1 LUT, SRAM, SIPO register, and clock generator, carefully tuned to resolve timing hazards and balance power and performance.
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
 
+                <!-- F1Tenth project -->
+                <tr onmouseover="f1tenth_start()" onmouseout="f1tenth_stop()" bgcolor="#ffffff">
+                  <td colspan="2" style="padding: 4px 0;">
+                    <div class="project-box">
+                      <div style="flex: 0 0 160px; padding: 16px;">
+                        <div class="one" style="position: relative;">
+                          <div class="two" id="f1tenth_cover" style="
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            opacity: 0;
+                            transition: opacity 0.2s;
+                          ">
+                            <video width="100%" height="100%" muted autoplay loop style="object-fit: cover;">
+                              <source src="assets/projects/f1tenth/thumbnail.mp4">
+                              Your browser does not support the video tag.
+                            </video>
+                          </div>
+                          <img src="assets/projects/f1tenth/thumbnail.png" width="160" style="display: block;">
+                        </div>
+                        <script>
+                          function f1tenth_start() {
+                            document.getElementById("f1tenth_cover").style.opacity = "1";
+                          }
+                          function f1tenth_stop() {
+                            document.getElementById("f1tenth_cover").style.opacity = "0";
+                          }
+                          f1tenth_stop();
+                        </script>
+                      </div>
+                      <div style="flex: 1; padding: 16px;">
+                        <a href="projects_pages/f1tenth.html">
+                          <span class="papertitle">Auto-driving Engines for F1/10</span>
+                        </a>
+                        <br>
+                        <a href="projects_pages/f1tenth.html">project page</a> /
+                        <a href="https://github.com/anhthh2207/cis5710-homework.git">code</a>
+                        <p style="margin-top: 8px;">
+                          We designed autonomous driving systems for F1/10 racing cars, featuring SLAM, motion planning, optimal control, deep learning-based perception, and integration across simulation and hardware platforms.
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
 
+                <!-- LC3 project -->
+                <tr onmouseover="lc3_start()" onmouseout="lc3_stop()" bgcolor="#ffffff">
+                  <td colspan="2" style="padding: 4px 0;">
+                    <div class="project-box">
+                      <div style="flex: 0 0 160px; padding: 16px;">
+                        <div class="one" style="position: relative;">
+                          <div class="two" id="lc3_cover" style="
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            opacity: 0;
+                            transition: opacity 0.2s;
+                          ">
+                            <video width="100%" height="100%" muted autoplay loop style="object-fit: cover;">
+                              <source src="assets/projects/lc3/thumbnail.png">
+                              Your browser does not support the video tag.
+                            </video>
+                          </div>
+                          <img src="assets/projects/lc3/thumbnail.png" width="160" style="display: block;">
+                        </div>
+                        <script>
+                          function lc3_start() {
+                            document.getElementById("lc3_cover").style.opacity = "1";
+                          }
+                          function lc3_stop() {
+                            document.getElementById("lc3_cover").style.opacity = "0";
+                          }
+                          lc3_stop();
+                        </script>
+                      </div>
+                      <div style="flex: 1; padding: 16px;">
+                        <a href="https://github.com/anhthh2207/lc3-virtual-machine">
+                          <span class="papertitle">LC3 Simulator</span>
+                        </a>
+                        <br>
+                        <a href="https://github.com/anhthh2207/lc3-virtual-machine">code</a>
+                        <p style="margin-top: 8px;">
+                          This project implemented the LC-3 (Little Computer 3) architecture in C. We verified and demonstrated our design using games written in LC-3 Assembly, including 2048, Hangman, and Rogue.
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
 
-    <!-- csr project  -->
-    <tr onmouseout="csr_stop()" onmouseover="csr_start()" bgcolor="#ffffff">
-      <td colspan="2" style="padding:4px 0;">
-        <div class="project-box" style="display: flex; flex-wrap: wrap; align-items:center;">
-          <!-- Image / Video -->
-          <div style="flex: 0 0 160px; padding: 16px;">
-            <div class="one" style="position: relative;">
-              <div class="two" id='csr_cover' style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.2s;">
-                <video width="100%" height="100%" muted autoplay loop style="object-fit: cover;">
-                  <source src="assets/projects/csr/cover_pic.png">
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-              <img src='assets/projects/csr/cover_pic.png' width="160" style="display: block;">
-            </div>
-            <script type="text/javascript">
-              function csr_start() {
-                document.getElementById('csr_cover').style.opacity = "1";
-              }
-              function csr_stop() {
-                document.getElementById('csr_cover').style.opacity = "0";
-              }
-              csr_stop();
-            </script>
-          </div>
+                <!-- Solar Tracker project -->
+                <tr onmouseover="solar_start()" onmouseout="solar_stop()" bgcolor="#ffffff">
+                  <td colspan="2" style="padding: 4px 0;">
+                    <div class="project-box">
+                      <div style="flex: 0 0 160px; padding: 16px;">
+                        <div class="one" style="position: relative;">
+                          <div class="two" id="solar_cover" style="
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            opacity: 0;
+                            transition: opacity 0.2s;
+                          ">
+                            <video width="100%" height="100%" muted autoplay loop style="object-fit: cover;">
+                              <source src="assets/projects/auto_solartracker/thumbnail.mp4" type="video/mp4">
+                              Your browser does not support the video tag.
+                            </video>
+                          </div>
+                          <img src="assets/projects/auto_solartracker/thumbnail.png" width="160" style="display: block;">
+                        </div>
+                        <script>
+                          function solar_start() {
+                            document.getElementById("solar_cover").style.opacity = "1";
+                          }
+                          function solar_stop() {
+                            document.getElementById("solar_cover").style.opacity = "0";
+                          }
+                          solar_stop();
+                        </script>
+                      </div>
+                      <div style="flex: 1; padding: 16px;">
+                        <a href="https://github.com/anhthh2207/auto-solar-tracker">
+                          <span class="papertitle">Automatic Solar Tracker</span>
+                        </a>
+                        <br>
+                        <a href="https://github.com/anhthh2207/auto-solar-tracker">code</a>
+                        <p style="margin-top: 8px;">
+                          Automatic Solar Tracker is a dual-axis system designed to maximize solar energy absorption by adjusting panel orientation based on input from Light Dependent Resistor (LDR) sensors. The system is controlled by servo motors powered by the Tiva TM4C123GH6PM microcontroller.
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
 
-          <!-- Text -->
-          <div style="flex: 1; padding: 16px;">
-            <a href="projects_pages/csr.html">
-              <span class="papertitle">Efficient DNN via Pruning & Sparse Matrix Compression</span>
-            </a>
-            <br>
-            <a href="projects_pages/csr.html">project page</a> /
-            <a href="https://github.com/ESE-5390-Fall-2024/project-group-09">code</a>
-            <p></p>
-            <p style="margin-top: 8px;">
-              This project investigated different pruning patterns and sparsity levels, and developed a custom linear layer leveraging the Compressed Sparse Row (CSR) format to improve memory efficiency and accelerate neural network inference.
-            </p>
-          </div>
-        </div>
-      </td>
-    </tr>
+            <!-- CONTACT -->
+            <table style="
+              width: 100%;
+              border: 0;
+              border-spacing: 0;
+              border-collapse: separate;
+              margin: 0 auto;
+              margin-top: 1rem;
+            ">
+              <tbody>
+                <tr>
+                  <td id="contact" style="padding: 16px; width: 100%; vertical-align: middle;">
+                    <h2>contact</h2>
+                    <p>
+                      Feel free to reach out to me via email:<br>
+                      <a href="mailto:anhthh@seas.upenn.edu">anhthh@seas.upenn.edu</a><br>
+                      <a href="mailto:tranhhoanganh220702@gmail.com">tranhhoanganh220702@gmail.com</a>
+                    </p>
+                    <p>
+                      Or connect with me on LinkedIn as
+                      <a href="https://www.linkedin.com/in/anh-thh/">Huy Hoang Anh Tran</a>.
+                    </p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
 
-
-
-    <!-- clb project  -->
-    <tr onmouseout="clb_stop()" onmouseover="clb_start()" bgcolor="#ffffff">
-      <td colspan="2" style="padding:4px 0;">
-        <div class="project-box" style="display: flex; flex-wrap: wrap; align-items:center;">
-          <div style="flex: 0 0 160px; padding: 16px;">
-            <div class="one" style="position: relative;">
-              <div class="two" id='clb_cover' style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.2s;">
-                <video width="100%" height="100%" muted autoplay loop style="object-fit: cover;">
-                  <source src="assets/projects/clb/cover_pic.png">
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-              <img src='assets/projects/clb/cover_pic.png' width="160" style="display: block;">
-            </div>
-            <script type="text/javascript">
-              function clb_start() {
-                document.getElementById('clb_cover').style.opacity = "1";
-              }
-              function clb_stop() {
-                document.getElementById('clb_cover').style.opacity = "0";
-              }
-              clb_stop();
-            </script>
-          </div>
-          <div style="flex: 1; padding: 16px;">
-            <a href="projects_pages/clb.html">
-              <span class="papertitle">Configurable Logic Block Design, Verification and Optimization</span>
-            </a>
-            <br>
-            <a href="projects_pages/clb.html">project page</a>
-            <p></p>
-            <p style="margin-top: 8px;">
-              This project presents the design and verification of a 16-bit Configurable Logic Block (CLB) implemented using Cadence 45nm Salicide 1.0V/1.8V 1P 11M technology. Our design integrates key modules, including a 16:1 LUT, SRAM, SIPO register, and clock generator, carefully tuned to resolve timing hazards and balance power and performance.
-            </p>
-          </div>
-        </div>
-      </td>
-    </tr>
-
-
-    <!-- f1tenth project  -->
-    <tr onmouseout="f1tenth_stop()" onmouseover="f1tenth_start()" bgcolor="#ffffff">
-      <td colspan="2" style="padding:4px 0;">
-        <div class="project-box" style="display: flex; flex-wrap: wrap; align-items:center;">
-          <div style="flex: 0 0 160px; padding: 16px;">
-            <div class="one" style="position: relative;">
-              <div class="two" id='f1tenth_cover' style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.2s;">
-                <video width="100%" height="100%" muted autoplay loop style="object-fit: cover;">
-                  <source src="assets/projects/f1tenth/thumbnail.mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-              <img src='assets/projects/f1tenth/thumbnail.png' width="160" style="display: block;">
-            </div>
-            <script type="text/javascript">
-              function f1tenth_start() {
-                document.getElementById('f1tenth_cover').style.opacity = "1";
-              }
-              function f1tenth_stop() {
-                document.getElementById('f1tenth_cover').style.opacity = "0";
-              }
-              f1tenth_stop();
-            </script>
-          </div>
-
-          <div style="flex: 1; padding: 16px;">
-            <a href="projects_pages/f1tenth.html">
-              <span class="papertitle">Auto-driving Engines for F1/10</span>
-            </a>
-            <br>
-            <a href="projects_pages/f1tenth.html">project page</a> /
-            <a href="https://github.com/anhthh2207/cis5710-homework.git">code</a>
-            <p></p>
-            <p style="margin-top: 8px;">
-              We designed autonomous driving systems for F1/10 racing cars, featuring SLAM, motion planning, optimal control, deep learning-based perception, and integration across simulation and hardware platforms.
-            </p>
-          </div>
-        </div>
-      </td>
-    </tr>
-
-
-
-
-
-    <!-- lc3 project  -->
-    <tr onmouseout="lc3_stop()" onmouseover="lc3_start()" bgcolor="#ffffff">
-      <td colspan="2" style="padding:4px 0;">
-        <div class="project-box" style="display: flex; flex-wrap: wrap; align-items:center;">
-          <div style="flex: 0 0 160px; padding: 16px;">
-            <div class="one" style="position: relative;">
-              <div class="two" id='lc3_cover' style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.2s;">
-                <video width="100%" height="100%" muted autoplay loop style="object-fit: cover;">
-                  <source src="assets/projects/lc3/thumbnail.png">
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-              <img src='assets/projects/lc3/thumbnail.png' width="160" style="display: block;">
-            </div>
-            <script type="text/javascript">
-              function lc3_start() {
-                document.getElementById('lc3_cover').style.opacity = "1";
-              }
-              function lc3_stop() {
-                document.getElementById('lc3_cover').style.opacity = "0";
-              }
-              lc3_stop();
-            </script>
-          </div>
-
-          <div style="flex: 1; padding: 16px;">
-            <a href="https://github.com/anhthh2207/lc3-virtual-machine">
-              <span class="papertitle">LC3 Simulator</span>
-            </a>
-            <br>
-            <a href="https://github.com/anhthh2207/lc3-virtual-machine">code</a>
-            <p></p>
-            <p style="margin-top: 8px;">
-              This project implemented the LC-3 (Little Computer 3) architecture in C. We verified and demonstrated our design using games written in LC-3 Assembly, including 2048, Hangman, and Rogue.
-            </p>
-          </div>
-        </div>
-      </td>
-    </tr>
-
-
-
-
-    <!-- auto solar tracker project  -->
-    <tr onmouseout="solar_stop()" onmouseover="solar_start()" bgcolor="#ffffff">
-      <td colspan="2" style="padding:4px 0;">
-        <div class="project-box" style="display: flex; flex-wrap: wrap; align-items:center;">
-          <!-- Image / Video -->
-          <div style="flex: 0 0 160px; padding: 16px;">
-            <div class="one" style="position: relative;">
-              <div class="two" id='solar_cover' style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.2s;">
-                <video width="100%" height="100%" muted autoplay loop style="object-fit: cover;">
-                  <source src="assets/projects/auto_solartracker/thumbnail.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-              <img src='assets/projects/auto_solartracker/thumbnail.png' width="160" style="display: block;">
-            </div>
-            <script type="text/javascript">
-              function solar_start() {
-                document.getElementById('solar_cover').style.opacity = "1";
-              }
-              function solar_stop() {
-                document.getElementById('solar_cover').style.opacity = "0";
-              }
-              solar_stop();
-            </script>
-          </div>
-
-          <!-- Text -->
-          <div style="flex: 1; padding: 16px;">
-            <a href="https://github.com/anhthh2207/auto-solar-tracker">
-              <span class="papertitle">Automatic Solar Tracker</span>
-            </a>
-            <br>
-            <a href="https://github.com/anhthh2207/auto-solar-tracker">code</a>
-            <p></p>
-            <p style="margin-top: 8px;">
-              Automatic Solar Tracker is a dual-axis system designed to maximize solar energy absorption by adjusting panel orientation based on input from Light Dependent Resistor (LDR) sensors. The system is controlled by servo motors powered by the Tiva TM4C123GH6PM microcontroller.
-            </p>
-          </div>
-        </div>
-      </td>
-    </tr>
-
-
-
-
-
-
-
-
-
-
-
-  <tr>
-    <td style="padding:16px;width:100%;vertical-align:middle" id="contact">
-      <h2>contact</h2>
-      <p>
-        Feel free to reach out to me via email:<br>
-        <a href="mailto:anhthh@seas.upenn.edu">anhthh@seas.upenn.edu</a><br>
-        <a href="mailto:tranhuyhoanganh220702@gmail.com">tranhuyhoanganh220702@gmail.com</a><br>  
-      </p>
-      <p>
-        Or connect with me on LinkedIn as <a href="https://www.linkedin.com/in/anh-thh/">Huy Hoang Anh Tran</a>.
-      </p>
-    </td>
-  </tr>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-              <td style="padding:0px">
-                <br>
-                <p style="text-align:center;font-size:small;">
-                  This website is developed and maintained by Anh Tran, inspired by <a href="https://jonbarron.info/">jonbarron_website</a>.
-                </p>
-              </td>
-            </tr>
-          </tbody></table> 
-        </td>
-      </tr>
+            <!-- FOOTER -->
+            <table style="
+              width: 100%;
+              border: 0;
+              border-spacing: 0;
+              border-collapse: separate;
+              margin: 0 auto;
+              margin-top: 1rem;
+            ">
+              <tbody>
+                <tr>
+                  <td style="padding: 0; text-align: center; font-size: small;">
+                    <br>
+                    This website is developed and maintained by Anh Tran, inspired by
+                    <a href="https://jonbarron.info/">jonbarron_website</a>.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
     </table>
 
-    
     <script>
-      // dynamically updates the width of the scroll indicator bar (#scroll-progress) as the user scrolls through the page. 
+      // dynamically updates the width of the scroll indicator bar (#scroll-progress) as the user scrolls through the page.
       window.addEventListener('scroll', () => {
         const scrollTop = window.scrollY;
         const docHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -445,6 +524,5 @@
         document.getElementById('scroll-progress').style.width = scrollPercent + '%';
       });
     </script>
-
   </body>
 </html>
