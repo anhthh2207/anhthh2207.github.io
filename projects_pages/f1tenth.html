@@ -16,12 +16,11 @@
       padding: 0;
     }
 
-    /* enforce a max‐width of 850px for the “page‐wrapper” and center it */
+    /* enforce a max‐width of 864px for the “page‐wrapper” and center it */
     .page-wrapper {
-      max-width: 850px;
+      max-width: 864px;
       margin: 0 auto;
       padding: 2.5% 1rem;
-      /* justify-align all paragraph and list text */
       text-align: justify;
     }
 
@@ -39,7 +38,6 @@
     .page-wrapper li {
       white-space: normal;
       overflow-wrap: break-word;
-      /* explicitly justify paragraphs and list items */
       text-align: justify;
     }
 
@@ -73,7 +71,77 @@
     }
     .nav-inner .brand {
       margin-right: auto;
-      margin-left: 0;
+      margin-left: -8px;
+      font-size: 1.25rem;
+      font-weight: 500;
+    }
+
+    nav div {
+      line-height: 24px;
+    }
+  </style><style>
+    /* remove default body padding/margins so the navbar truly stretches edge‐to‐edge */
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* enforce a max‐width of 864px for the “page‐wrapper” and center it */
+    .page-wrapper {
+      max-width: 864px;
+      margin: 0 auto;
+      padding: 2.5% 1rem;
+      text-align: justify;
+    }
+
+    /* responsive images */
+    .page-wrapper img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ensure text wraps normally */
+    .page-wrapper p,
+    .page-wrapper li {
+      white-space: normal;
+      overflow-wrap: break-word;
+      text-align: justify;
+    }
+
+    /* nav “inner” container also limited to 850px, plus matching horizontal padding */
+    nav > .nav-inner {
+      max-width: 850px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 10px 0px 10px 18px;
+    }
+
+    /* scroll‐progress bar at bottom of navbar */
+    #scroll-progress {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      width: 0%;
+      background-color: #007bff;
+      transition: width 0.1s ease-out;
+    }
+
+    /* simple link styling in nav */
+    .nav-inner a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #333;
+      font-size: 1rem;
+    }
+    .nav-inner .brand {
+      margin-right: auto;
+      margin-left: -8px;
       font-size: 1.25rem;
       font-weight: 500;
     }
@@ -128,13 +196,13 @@
         <p>
           The very first algorithm we employed was PID wall-following. Its principle is straightforward: the robot navigates along the wall while maintaining a fixed distance. The PID controller adjusts the steering angle to keep the distance between the agent and the wall constant.
         </p>
-        <div class="text-center mb-4">
-          <img
-            src="../../assets/projects/f1tenth/wall-follow-levined-blocked.gif"
+        <div class="text-center mb-3">
+          <img 
+            src="../../assets/projects/f1tenth/wall-follow-levined-blocked.gif" 
             alt="PID wall-following"
             style="max-width: 50%; height: auto; display: block; margin: 0 auto;"
-          />
-          <p class="fst-italic">PID wall-following</p>
+          >
+          <figcaption class="mt-2">PID wall-following</figcaption>
         </div>
         <p>
           This algorithm has a relatively simple implementation; however, it demands extensive time for tuning the PID gains. Moreover, it is inefficient in handling environmental irregularities—for example, it struggles with sharp turns and indentations. Finally, achieving high velocities is almost impossible, as evidenced by significant wobbling even at a low speed, which would be exacerbated at higher speeds.
@@ -144,23 +212,15 @@
         <p>
           By identifying the nearest obstacles or sharp disparities in the LIDAR data and masking out an area corresponding to the agent’s size, the gap-following algorithm defines “gaps” (open spaces) for navigation. The agent then moves toward the gap that is widest or extends the farthest.
         </p>
-        <div class="row text-center mb-4">
-          <div class="col-md-6 mb-3 mb-md-0">
-            <img
-              src="../../assets/projects/f1tenth/gap-follow-levine-blocked.gif"
-              alt="Gap-following no obstacle"
-              class="img-fluid"
-            />
-            <p class="fst-italic">Gap-following in obstacle-free map</p>
-          </div>
-          <div class="col-md-6">
-            <img
-              src="../../assets/projects/f1tenth/gap-follow-levine-obs.gif"
-              alt="Gap-following with obstacle"
-              class="img-fluid"
-            />
-            <p class="fst-italic">Gap-following in obstacle map</p>
-          </div>
+        <div class="text-center mb-3 d-flex flex-wrap justify-content-center gap-3">
+          <figure style="max-width:400px; flex: 1 1 200px;">
+            <img src="../../assets/projects/f1tenth/gap-follow-levine-blocked.gif" alt="Gap-following no obstacle">
+            <figcaption class="mt-2">Gap-following in obstacle-free map</figcaption>
+          </figure>
+          <figure style="max-width:400px; flex: 1 1 200px;">
+            <img src="../../assets/projects/f1tenth/gap-follow-levine-obs.gif" alt="Gap-following with obstacle">
+            <figcaption class="mt-2">Gap-following in obstacle map</figcaption>
+          </figure>
         </div>
         <p>
           Apparently, this algorithm allows for much smoother motion and higher speeds than wall-following. Additionally, thanks to its smooth and stable motion, the robot can easily avoid obstacles while exploring an unknown environment (at a conservative speed). However, it still exhibits the inherent limitation of reactive methods, namely that the generated trajectories are suboptimal.
@@ -177,23 +237,15 @@
         <p>
           Given a pre-planned trajectory and the agent’s ability to accurately locate itself in the environment (e.g., via SLAM and particle filter), the pure pursuit algorithm computes driving commands by targeting a point at a fixed look-ahead distance along the planned path.
         </p>
-        <div class="row text-center mb-4">
-          <div class="col-md-6 mb-3 mb-md-0">
-            <img
-              src="../../assets/projects/f1tenth/pure-pursuit-slam-levine.gif"
-              alt="Pure pursuit SLAM"
-              class="img-fluid"
-            />
-            <p class="fst-italic">Pure pursuit with SLAM-estimated map</p>
-          </div>
-          <div class="col-md-6">
-            <img
-              src="../../assets/projects/f1tenth/pure-pursuit-fastest.gif"
-              alt="Pure pursuit dynamic"
-              class="img-fluid"
-            />
-            <p class="fst-italic">Enhanced pure pursuit with trajectory smoothing</p>
-          </div>
+        <div class="text-center mb-3 d-flex flex-wrap justify-content-center gap-3">
+          <figure style="max-width:400px; flex: 1 1 200px;">
+            <img src="../../assets/projects/f1tenth/pure-pursuit-slam-levine.gif" alt="Pure pursuit SLAM">
+            <figcaption class="mt-2">Gap-following in obstacle-free map</figcaption>
+          </figure>
+          <figure style="max-width:400px; flex: 1 1 200px;">
+            <img src="../../assets/projects/f1tenth/pure-pursuit-fastest.gif" alt="Pure pursuit smoothened">
+            <figcaption class="mt-2">Gap-following in obstacle map</figcaption>
+          </figure>
         </div>
         <p>
           Despite its surprising simplicity, this algorithm delivers superior speed and stability compared to reactive approaches. Additionally, developers can easily combine it with other methods to optimize the input trajectory or speed management, further improving lap times.
