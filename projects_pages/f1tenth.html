@@ -10,13 +10,40 @@
   />
 
   <style>
-    /* remove default body margins so navbar spans edge-to-edge */
+    /* remove default body padding/margins so the navbar truly stretches edge‐to‐edge */
     html, body {
       margin: 0;
       padding: 0;
     }
 
-    /* navbar’s inner container capped at 850px */
+    /* enforce a max‐width of 850px for the “page‐wrapper” and center it */
+    .page-wrapper {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 2.5% 1rem;
+      /* justify-align all paragraph and list text */
+      text-align: justify;
+    }
+
+    /* responsive images */
+    .page-wrapper img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ensure text wraps normally */
+    .page-wrapper p,
+    .page-wrapper li {
+      white-space: normal;
+      overflow-wrap: break-word;
+      /* explicitly justify paragraphs and list items */
+      text-align: justify;
+    }
+
+    /* nav “inner” container also limited to 850px, plus matching horizontal padding */
     nav > .nav-inner {
       max-width: 850px;
       margin: 0 auto;
@@ -26,7 +53,7 @@
       padding: 10px 0px 10px 18px;
     }
 
-    /* scroll-progress bar styling */
+    /* scroll‐progress bar at bottom of navbar */
     #scroll-progress {
       position: absolute;
       bottom: 0;
@@ -35,29 +62,6 @@
       width: 0%;
       background-color: #007bff;
       transition: width 0.1s ease-out;
-    }
-
-    /* wrapper that caps content at 850px and centers it */
-    .page-wrapper {
-      max-width: 850px;
-      margin: 0 auto;
-      padding: 2.5% 1rem;
-    }
-
-    /* make all images inside wrapper fluid */
-    .page-wrapper img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* ensure paragraphs and list items wrap normally */
-    .page-wrapper p,
-    .page-wrapper li {
-      white-space: normal;
-      overflow-wrap: break-word;
     }
 
     /* simple link styling in nav */
@@ -73,7 +77,7 @@
       font-size: 1.25rem;
       font-weight: 500;
     }
-    
+
     nav div {
       line-height: 24px;
     }

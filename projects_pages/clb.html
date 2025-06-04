@@ -21,7 +21,9 @@
     .page-wrapper {
       max-width: 850px;
       margin: 0 auto;
-      padding: 2.5% 1rem; /* vertical spacing + a bit of horizontal padding */
+      padding: 2.5% 1rem;
+      /* justify-align all paragraph and list text */
+      text-align: justify;
     }
 
     /* responsive images */
@@ -38,9 +40,10 @@
     .page-wrapper li {
       white-space: normal;
       overflow-wrap: break-word;
+      text-align: justify;
     }
 
-    /* nav “inner” container also limited to 850px */
+    /* nav “inner” container also limited to 850px, plus matching horizontal padding */
     nav > .nav-inner {
       max-width: 850px;
       margin: 0 auto;

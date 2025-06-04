@@ -10,20 +10,22 @@
   >
 
   <style>
-    /* remove default body margin so navbar truly spans edge-to-edge */
+    /* remove default body padding/margins so the navbar truly stretches edge‐to‐edge */
     html, body {
       margin: 0;
       padding: 0;
     }
 
-    /* wrapper that caps content at 850px and centers it */
+    /* enforce a max‐width of 850px for the “page‐wrapper” and center it */
     .page-wrapper {
       max-width: 850px;
       margin: 0 auto;
-      padding: 2.5% 1rem; /* vertical 2.5% + horizontal 1rem */
+      padding: 2.5% 1rem;
+      /* justify-align all paragraph and list text */
+      text-align: justify;
     }
 
-    /* make images inside the wrapper fluid */
+    /* responsive images */
     .page-wrapper img {
       max-width: 100%;
       height: auto;
@@ -32,14 +34,16 @@
       margin-right: auto;
     }
 
-    /* ensure paragraphs and list items wrap normally */
+    /* ensure text wraps normally */
     .page-wrapper p,
     .page-wrapper li {
       white-space: normal;
       overflow-wrap: break-word;
+      /* explicitly justify paragraphs and list items */
+      text-align: justify;
     }
 
-    /* navbar’s “inner” section also limited to 850px */
+    /* nav “inner” container also limited to 850px, plus matching horizontal padding */
     nav > .nav-inner {
       max-width: 850px;
       margin: 0 auto;
@@ -49,7 +53,7 @@
       padding: 10px 0px 10px 18px;
     }
 
-    /* scroll-progress bar at bottom of navbar */
+    /* scroll‐progress bar at bottom of navbar */
     #scroll-progress {
       position: absolute;
       bottom: 0;
@@ -60,7 +64,7 @@
       transition: width 0.1s ease-out;
     }
 
-    /* simple link styling in the nav */
+    /* simple link styling in nav */
     .nav-inner a {
       margin: 0 10px;
       text-decoration: none;
